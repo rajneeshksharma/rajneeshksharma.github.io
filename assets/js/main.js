@@ -11,6 +11,7 @@ if (navToggle) {
   });
 }
 document.getElementById("experienceValue").innerHTML=`${Math.abs((new Date(Date.now() - new Date("06/16/2018"))).getUTCFullYear() - 1970)}+`;
+document.getElementById("experienceValue2").innerHTML=`${Math.abs((new Date(Date.now() - new Date("06/16/2018"))).getUTCFullYear() - 1970)}+`;
 
 /*===== MENU HIDDEN =====*/
 /* Validate if constant exists */
