@@ -10,8 +10,8 @@ if (navToggle) {
     navMenu.classList.add('show-menu');
   });
 }
-document.getElementById("experienceValue").innerHTML=`${Math.abs((new Date(Date.now() - new Date("06/16/2017"))).getUTCFullYear() - 1970)}+`;
-document.getElementById("experienceValue2").innerHTML=`${Math.abs((new Date(Date.now() - new Date("06/16/2017"))).getUTCFullYear() - 1970)}+`;
+document.getElementById("experienceValue").innerHTML=`${Math.abs((new Date(Date.now() - new Date("06/16/2013"))).getUTCFullYear() - 1970)}+`;
+document.getElementById("experienceValue2").innerHTML=`${Math.abs((new Date(Date.now() - new Date("06/16/2013"))).getUTCFullYear() - 1970)}+`;
 
 /*===== MENU HIDDEN =====*/
 /* Validate if constant exists */
