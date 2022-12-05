@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Rajneesh Kumar Sharma</h1>
+<h1 align="center">Hi 👋, I'm Rajneesh Sharma</h1>
 <h3 align="center">Fullstack Developer (MEAN / MERN Stack) 🚀 from India. Beside's programming, I enjoy eating food and traveling.</h3> 
 
 
