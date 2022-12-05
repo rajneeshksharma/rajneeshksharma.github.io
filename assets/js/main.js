@@ -10,8 +10,8 @@ if (navToggle) {
     navMenu.classList.add('show-menu');
   });
 }
-document.getElementById("experienceValue").innerHTML=`${Math.abs((new Date(Date.now() - new Date("06/16/2018"))).getUTCFullYear() - 1970)}+`;
-document.getElementById("experienceValue2").innerHTML=`${Math.abs((new Date(Date.now() - new Date("06/16/2018"))).getUTCFullYear() - 1970)}+`;
+document.getElementById("experienceValue").innerHTML=`${Math.abs((new Date(Date.now() - new Date("06/16/2017"))).getUTCFullYear() - 1970)}+`;
+document.getElementById("experienceValue2").innerHTML=`${Math.abs((new Date(Date.now() - new Date("06/16/2017"))).getUTCFullYear() - 1970)}+`;
 
 /*===== MENU HIDDEN =====*/
 /* Validate if constant exists */
@@ -193,4 +193,25 @@ themeButton.addEventListener('click', () => {
     // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
+})
+
+var myLink = document.querySelector('.Send_Message')
+myLink.addEventListener('click', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('contact_me_name').value
+  const email = document.getElementById('contact_me_email').value
+  const project = document.getElementById('contact_me_project').value
+  const message = document.getElementById('contact_me_message').value
+  if(name && name !== "" && message && message !== ""){
+  const emailMessage = `
+  Hi Rajneesh,%0D%0A %0D%0A
+  I am ${name} ${email}, i have a project for you ${project}.%0D%0A %0D%0A
+  Message : ${message}%0D%0A %0D%0A
+  Thanks %0D%0A
+  ${name}
+  `;
+  const link = `mailto:k.rajneesh.sharma@gmail.com?subject=Contact%20with%20Rajneesh&body=${emailMessage}`
+
+  window.open(link,  "_blank");
+  }
 })

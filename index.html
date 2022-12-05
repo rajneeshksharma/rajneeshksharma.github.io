@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="This is portfolio website for Rajneesh Kumar Sharma.">
+  <meta name="description" content="This is portfolio website for Rajneesh Sharma.">
   <meta property="og:locale" content="en_IN" />
   <meta property="og:type" content="portfolio" />
-  <meta property="og:title" content="Rajneesh Kumar Sharma | portfolio" />
+  <meta property="og:title" content="Rajneesh Sharma | portfolio" />
   <meta property="og:url" content="https://rajneeshksharma.github.io/" />
-  <meta property="og:site_name" content="Rajneesh Kumar Sharma" />
+  <meta property="og:site_name" content="Rajneesh Sharma" />
   <!--==================== UNICONS ====================-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 
@@ -20,13 +20,23 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
 
   <title>Rajneesh's Portfolio</title>
+  <!-- Include the library. -->
+<script
+src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js">
+</script>
+
+<!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
+<link
+rel="stylesheet"
+href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+/>
 </head>
 
 <body>
   <!--==================== HEADER ====================-->
   <header class="header" id="header">
     <nav class="nav container">
-      <a href="#" class="nav__logo">Rajneesh Kumar Sharma</a>
+      <a href="#" class="nav__logo">Rajneesh Sharma</a>
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list grid">
           <li class="nav__item">
@@ -72,15 +82,10 @@
       <div class="home__container container grid">
         <div class="home__content grid">
           <div class="home__social">
-            <a href="https://www.linkedin.com/in/rajneesh-rks/" target="_blank" class="home__social-icon">
-              <i class="uil uil-linkedin-alt"></i>
-            </a>
             <a href="https://github.com/rajneeshksharma" target="_blank" class="home__social-icon">
               <i class="uil uil-github"></i>
             </a>
-            <a href="https://twitter.com/rajneesh_rks" target="_blank" class="home__social-icon">
-              <i class="uil uil-twitter"></i>
-            </a>
+
           </div>
           <div class="home__img">
             <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +101,7 @@
                         165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
                         129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
                         -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-                <image class="home__blob-img" x="12" y="15" xlink:href="assets/img/my.png" />
+                <image class="home__blob-img" x="12" y="15" xlink:href="assets/img/me.png" />
               </g>
             </svg>
           </div>
@@ -129,7 +134,7 @@
       <span class="section__subtitle">My introduction</span>
 
       <div class="about__container container grid">
-        <img src="assets/img/k.jpg" alt="" class="about__img" />
+        <img src="https://www.kantitsolution.com/assets/images/director.jfif" alt="" class="about__img" />
 
         <div class="about__data">
           <p class="about__description">
@@ -150,19 +155,20 @@
             </div>
 
             <div>
-              <span class="about__info-title">2+</span>
+              <span class="about__info-title">6+</span>
               <span class="about__info-name">Companies <br />
                 worked</span>
             </div>
           </div>
-          <div class="about__buttons">
+          <!-- <div class="about__buttons">
             <a download="" href="assets/Rajneesh's Resume_231121.pdf" class="button button--flex">
               Download resume
               <i class="uil uil-download-alt button__icon"></i>
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
+   
     </section>
 
     <!--==================== SKILLS ====================-->
@@ -171,8 +177,74 @@
       <span class="section__subtitle">My Technical level</span>
       <div class="skills__container container">
         <div>
-          <!--==================== SKILLS 1 ====================-->
+          <!--==================== SKILLS 2 ====================-->
           <div class="skills__content skills__open">
+            <div class="skills__header">
+              <i class="uil uil-brackets-curly skills__icon"></i>
+
+              <div>
+                <h1 class="skills__title">Full Stack Developer</h1>
+                <span class="skills__subtitle">WEll EXPERIENCED</span>
+              </div>
+
+              <i class="uil uil-angle-down skills__arrow"></i>
+            </div>
+
+            <div class="skills__list grid">
+
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">JavaScript</h3>
+                  <span class="skills__number">90%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__js"></span>
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">React</h3>
+                  <span class="skills__number">80%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__react"></span>
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">Angular 2+</h3>
+                  <span class="skills__number">80%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__react"></span>
+                </div>
+              </div>
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">HTML</h3>
+                  <span class="skills__number">70%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__html"></span>
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">CSS</h3>
+                  <span class="skills__number">70%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__css"></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!--==================== SKILLS 1 ====================-->
+          <div class="skills__content ">
             <div class="skills__header">
               <i class="uil uil-server-alt skills__icon"></i>
 
@@ -239,228 +311,11 @@
             </div>
           </div>
 
-          <!--==================== SKILLS 2 ====================-->
-          <div class="skills__content skills__close">
-            <div class="skills__header">
-              <i class="uil uil-brackets-curly skills__icon"></i>
-
-              <div>
-                <h1 class="skills__title">Full Stack Developer</h1>
-                <span class="skills__subtitle">WEll EXPERIENCED</span>
-              </div>
-
-              <i class="uil uil-angle-down skills__arrow"></i>
-            </div>
-
-            <div class="skills__list grid">
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">JavaScript</h3>
-                  <span class="skills__number">80%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__js"></span>
-                </div>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">React</h3>
-                  <span class="skills__number">70%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__react"></span>
-                </div>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Angular 2+</h3>
-                  <span class="skills__number">70%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__react"></span>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">HTML</h3>
-                  <span class="skills__number">60%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__html"></span>
-                </div>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">CSS</h3>
-                  <span class="skills__number">60%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__css"></span>
-                </div>
-              </div>
-
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>
 
-    <!--==================== QUALIFICATION ====================-->
-    <section class="qualification section">
-      <h2 class="section__title">Qualification</h2>
-      <span class="section__subtitle">My personal journey</span>
-
-      <div class="qualification__container container">
-        <div class="qualification__tabs">
-          <div class="qualification__button button--flex qualification__active" data-target="#education">
-            <i class="uil uil-graduation-cap qualification__icon"></i>
-            Education
-          </div>
-
-          <div class="qualification__button button--flex" data-target="#work">
-            <i class="uil uil-briefcase-alt qualification__icon"></i>
-            Work
-          </div>
-        </div>
-        <div class="qualification__sections">
-          <!--==================== QUALIFICATION content 1====================-->
-          <div class="qualification__content qualification__active" data-content id="education">
-            <!--==================== QUALIFICATION 1====================-->
-
-            <div class="qualification__data">
-              <div>
-                <h3 class="qualification__title">
-                  Computer Science Engineer
-                </h3>
-                <span class="qualification__subtitle">Shoolini University</span>
-                <div class="qualification__calender">
-                  <i class="uil uil-schedule"></i>
-                  2014 - 2018
-                </div>
-              </div>
-              <div>
-                <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span>
-              </div>
-            </div>
-
-            <!--==================== QUALIFICATION 2====================-->
-            <div class="qualification__data">
-              <div></div>
-              <div>
-                <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span>
-              </div>
-
-              <div>
-                <h3 class="qualification__title">12th Standard</h3>
-                <span class="qualification__subtitle">New Era Sr. School, Hamirpur, HP</span>
-                <div class="qualification__calender">
-                  <i class="uil uil-schedule"></i>
-                  2014 - 2013
-                </div>
-              </div>
-            </div>
-
-            <!--==================== QUALIFICATION 3====================-->
-            <div class="qualification__data">
-              <div>
-                <h3 class="qualification__title">10th Standard</h3>
-                <span class="qualification__subtitle">New Era Sr. School, Hamirpur, HP</span>
-                <div class="qualification__calender">
-                  <i class="uil uil-schedule"></i>
-                  2011 - 2012
-                </div>
-              </div>
-
-              <div>
-                <span class="qualification__rounder"></span>
-                <!-- <span class="qualification__line"></span> -->
-              </div>
-            </div>
-          </div>
-          <!--==================== QUALIFICATION content 2====================-->
-          <div class="qualification__content" data-content id="work">
-            <!--==================== QUALIFICATION 1====================-->
-
-            <div class="qualification__data">
-              <div></div>
-              <div>
-                <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span>
-              </div>
-              <div>
-                <h3 class="qualification__title">Senior Software Developer</h3>
-                <span class="qualification__subtitle">FIRMINIQ Systems India Centre</span>
-                <div class="qualification__calender">
-                  <i class="uil uil-schedule"></i>
-                  Nov/2020 - Present
-                </div>
-              </div>
-            </div>
-
-            <!--==================== QUALIFICATION 2====================-->
-            <div class="qualification__data">
-              <div>
-                <h3 class="qualification__title">
-                  Software Associate Delivery - Level II.
-                </h3>
-                <span class="qualification__subtitle">SmartData Enterprises inc.
-                </span>
-                <div class="qualification__calender">
-                  <i class="uil uil-schedule"></i>
-                  Dec/2019 - Nov/2020
-                </div>
-              </div>
-              <div>
-                <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span>
-              </div>
-            </div>
-            <!--==================== QUALIFICATION 3====================-->
-
-            <div class="qualification__data">
-              <div></div>
-              <div>
-                <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span>
-              </div>
-              <div>
-                <h3 class="qualification__title">Software Associate Delivery - Level I.</h3>
-                <span class="qualification__subtitle">SmartData Enterprises inc.</span>
-                <div class="qualification__calender">
-                  <i class="uil uil-schedule"></i>
-                  JAN/2019 - DEC/2019
-                </div>
-              </div>
-            </div>
-            <!--==================== QUALIFICATION 4====================-->
-            <div class="qualification__data">
-              <div>
-                <h3 class="qualification__title">
-                  Software Associate
-                </h3>
-                <span class="qualification__subtitle">SmartData Enterprises inc.
-                </span>
-                <div class="qualification__calender">
-                  <i class="uil uil-schedule"></i>
-                  JULY/2018 - DEC/2018
-                </div>
-              </div>
-              <div>
-                <span class="qualification__rounder"></span>
-                <!-- <span class="qualification__line"></span> -->
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!--==================== SERVICES ====================-->
     <section class="services section" id="services">
@@ -705,7 +560,7 @@
               <i class="uil uil-message project__icon button__icon"></i>
             </a>
           </div>
-          <img src="assets/img/my.png" alt="" class="project__img" />
+          <img src="assets/img/me.png" alt="" class="project__img" />
         </div>
       </div>
     </section>
@@ -756,25 +611,25 @@
           <div class="contact__inputs grid">
             <div class="contact__content">
               <label for="" class="contact__label">Name</label>
-              <input type="text" class="contact__input">
+              <input id="contact_me_name" type="text" class="contact__input">
             </div>
 
             <div class="contact__content">
               <label for="" class="contact__label">Email</label>
-              <input type="email" class="contact__input">
+              <input id="contact_me_email" type="email" class="contact__input">
             </div>
 
           </div>
           <div class="contact__content">
             <label for="" class="contact__label">Project</label>
-            <input type="email" class="contact__input">
+            <input id="contact_me_project" type="project" class="contact__input">
           </div>
           <div class="contact__content">
             <label for="" class="contact__label">Message</label>
-            <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+            <textarea id="contact_me_message" name="" id="" cols="0" rows="7" class="contact__input"></textarea>
           </div>
           <div>
-            <a href="" class="button button--flex">
+            <a href="" class="button button--flex Send_Message">
               Send Message
               <i class="uil uil-message button__icon"></i>
             </a>
@@ -782,6 +637,16 @@
         </form>
       </div>
     </section>
+
+    <section class="contact section" id="contact">
+      <div class="contact__container container ">
+        <div class="calendar">
+          <!-- Loading stuff -->
+          Loading the data just for you.
+        </div> 
+      </div>
+    </section>
+
   </main>
 
   <!--==================== FOOTER ====================-->
@@ -789,7 +654,7 @@
     <div class="footer__bg">
       <div class="footer__container container grid">
         <div>
-          <h1 class="footer__title">Rajneesh Kumar Sharma</h1>
+          <h1 class="footer__title">Rajneesh Sharma</h1>
           <span class="footer__subtitle">Full Stack Developer</span>
         </div>
 
@@ -806,13 +671,6 @@
         </ul>
 
         <div class="footer__socials">
-          <a href="https://www.linkedin.com/in/rajneesh-rks" target="_blank" class="footer__social">
-            <i class="uil uil-linkedin"></i>
-          </a>
-
-          <a href="https://twitter.com/rajneesh_rks" target="_blank" class="footer__social">
-            <i class="uil uil-twitter-alt"></i>
-          </a>
 
           <a href="https://github.com/rajneeshksharma" target="_blank" class="footer__social">
             <i class="uil uil-github"></i>
@@ -835,5 +693,17 @@
   <!--==================== MAIN JS ====================-->
   <script src="assets/js/main.js"></script>
 </body>
+<script>
+  GitHubCalendar(".calendar", "rajneeshksharma");
 
+  // or enable responsive functionality:
+  GitHubCalendar(".calendar", "rajneeshksharma", { responsive: true });
+
+  // Use a proxy
+  GitHubCalendar(".calendar", "rajneeshksharma", {
+     proxy (username) {
+       return fetch(`https://your-proxy.com/github?user=${username}`)
+     }
+  }).then(r => r.text()).catch(err=>console.log(err));
+</script>
 </html>
