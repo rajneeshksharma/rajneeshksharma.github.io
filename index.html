@@ -4,704 +4,797 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="This is portfolio website for Rajneesh Sharma.">
+  <meta name="description" content="Rajneesh Sharma — Senior Full Stack Developer specializing in AI-augmented workflows, React, Node.js, and high-performance web applications. Available for freelance projects." />
   <meta property="og:locale" content="en_IN" />
-  <meta property="og:type" content="portfolio" />
-  <meta property="og:title" content="Rajneesh Sharma | portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rajneesh Sharma | Senior Full Stack Developer" />
+  <meta property="og:description" content="AI-augmented full stack development. React, Node.js, AWS. Available for freelance." />
   <meta property="og:url" content="https://rajneeshksharma.github.io/" />
   <meta property="og:site_name" content="Rajneesh Sharma" />
-  <!--==================== UNICONS ====================-->
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 
-  <!--==================== SWIPER CSS ====================-->
-  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230c0c0c'/><text x='50' y='68' font-family='system-ui' font-size='48' font-weight='700' fill='%2310b981' text-anchor='middle'>RS</text></svg>" />
 
-  <!--==================== CSS ====================-->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Devicon (tech logos) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <title>Rajneesh's Portfolio</title>
-  <!-- Include the library. -->
-<script
-src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js">
-</script>
+  <!-- GitHub Calendar -->
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
 
-<!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
-<link
-rel="stylesheet"
-href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-/>
+  <title>Rajneesh Sharma — Senior Full Stack Developer</title>
 </head>
 
 <body>
-  <!--==================== HEADER ====================-->
+  <!-- ==================== NAVIGATION ==================== -->
   <header class="header" id="header">
     <nav class="nav container">
-      <a href="#" class="nav__logo">Rajneesh Sharma</a>
+      <a href="#" class="nav__logo">R<span class="nav__logo-dot">.</span>S</a>
+
       <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list grid">
-          <li class="nav__item">
-            <a href="#home" class="nav__link active-link"><i class="uil uil-estate nav__icon"></i> Home
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="#about" class="nav__link"><i class="uil uil-user nav__icon"></i> About
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="#skills" class="nav__link"><i class="uil uil-file-alt nav__icon"></i> Skills
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="#services" class="nav__link"><i class="uil uil-bag nav__icon"></i> Services</a>
-          </li>
-          <li class="nav__item">
-            <a href="#portfolio" class="nav__link"><i class="uil uil-scenery nav__icon"></i> Portfolio</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link"><i class="uil uil-message nav__icon"></i> Contact me
-            </a>
-          </li>
+        <ul class="nav__list">
+          <li><a href="#work" class="nav__link">Work</a></li>
+          <li><a href="#stack" class="nav__link">Stack</a></li>
+          <li><a href="#ai" class="nav__link">AI</a></li>
+          <li><a href="#services" class="nav__link">Services</a></li>
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
-        <i class="uil uil-times nav__close" id="nav-close"></i>
+        <button class="nav__close" id="nav-close" aria-label="Close menu">&times;</button>
       </div>
 
-      <div class="nav__btns">
-        <!-- theme change button -->
-        <i class="uil uil-moon change-theme" id="theme-button"></i>
-        <div class="nav__toggle" id="nav-toggle">
-          <i class="uil uil-apps"></i>
-        </div>
+      <div class="nav__actions">
+        <button class="change-theme" id="theme-button" aria-label="Toggle theme">
+          <svg class="theme-icon theme-icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon theme-icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="#contact" class="btn btn--primary nav__cta">Let's Talk</a>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </header>
 
-  <!--==================== MAIN ====================-->
   <main class="main">
-    <!--==================== HOME ====================-->
-    <section class="home section" id="home">
-      <div class="home__container container grid">
-        <div class="home__content grid">
-          <div class="home__social">
-            <a href="https://github.com/rajneeshksharma" target="_blank" class="home__social-icon">
-              <i class="uil uil-github"></i>
-            </a>
-
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+      <div class="gradient-mesh"></div>
+      <div class="gradient-mesh gradient-mesh--accent"></div>
+      <div class="hero__container container">
+        <div class="hero__content">
+          <div class="hero__available">
+            <span class="hero__dot"></span>
+            <span class="hero__available-text">Available for projects</span>
           </div>
-          <div class="home__img">
-            <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink">
-              <mask id="mask0" mask-type="alpha">
-                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                        130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                        97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                        0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-              </mask>
-              <g mask="url(#mask0)">
-                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                        165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                        129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                        -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-                <image class="home__blob-img" x="12" y="15" xlink:href="assets/img/me.png" />
-              </g>
-            </svg>
-          </div>
-          <div class="home__data">
-            <h1 class="home__title">Hi, I'am Rajneesh</h1>
-            <h3 class="home__subtitle">Full Stack JS Developer</h3>
-            <p class="home__description">
-              Committed s/w developer with more than <span id="experienceValue"></span> years of extensive experience
-              working in software development for multi-national clients across countries. Expertise in client
-              engagement, requirement analysis, effort estimation, design, and development.
-            </p>
-            <a href="#contact" class="button button--flex">
-              Contact Me <i class="uil uil-message button__icon"></i>
-            </a>
-          </div>
-        </div>
-        <div class="home__scroll">
-          <a href="#about" class="home__scroll-button button--flex">
-            <i class="uil uil-mouse-alt-2 home__scroll-mouse"></i>
-            <span class="home__scroll-name">Scroll Down</span>
-            <i class="uil uil-arrow-down home__scroll-arrow"></i>
-          </a>
-        </div>
-      </div>
-    </section>
 
-    <!--==================== ABOUT ====================-->
-    <section class="about section" id="about">
-      <h2 class="section__title">About Me</h2>
-      <span class="section__subtitle">My introduction</span>
+          <h1 class="hero__title">
+            Turning complex problems into
+            <span class="hero__title-gradient">elegant solutions</span>
+          </h1>
 
-      <div class="about__container container grid">
-        <img src="https://www.kantitsolution.com/assets/images/director.jfif" alt="" class="about__img" />
-
-        <div class="about__data">
-          <p class="about__description">
-            Full stack developer, with extensive knowledge and experience, working in
-            web technologies and UI / UX design, delivering quality work.
+          <p class="hero__subtitle">
+            Senior Full Stack Developer / AI-Augmented Workflows / <span id="experienceYears"></span>+ Years
           </p>
-          <div class="about__info">
-            <div>
-              <span class="about__info-title" id="experienceValue2"></span>
-              <span class="about__info-name">Years <br />
-                experience</span>
-            </div>
 
-            <div>
-              <span class="about__info-title">20+</span>
-              <span class="about__info-name">Completed <br />
-                project</span>
-            </div>
-
-            <div>
-              <span class="about__info-title">6+</span>
-              <span class="about__info-name">Companies <br />
-                worked</span>
-            </div>
-          </div>
-          <!-- <div class="about__buttons">
-            <a download="" href="assets/Rajneesh's Resume_231121.pdf" class="button button--flex">
-              Download resume
-              <i class="uil uil-download-alt button__icon"></i>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary">
+              Let's Talk
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
-          </div> -->
+            <a href="#work" class="btn btn--ghost">View My Work</a>
+          </div>
         </div>
-      </div>
-   
-    </section>
 
-    <!--==================== SKILLS ====================-->
-    <section class="skills section" id="skills">
-      <h2 class="section__title">Skills</h2>
-      <span class="section__subtitle">My Technical level</span>
-      <div class="skills__container container">
-        <div>
-          <!--==================== SKILLS 2 ====================-->
-          <div class="skills__content skills__open">
-            <div class="skills__header">
-              <i class="uil uil-brackets-curly skills__icon"></i>
-
-              <div>
-                <h1 class="skills__title">Full Stack Developer</h1>
-                <span class="skills__subtitle">WEll EXPERIENCED</span>
-              </div>
-
-              <i class="uil uil-angle-down skills__arrow"></i>
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <div class="hero__stat-value">
+              <span class="hero__stat-number" data-count="20">0</span><span class="hero__stat-suffix">+</span>
             </div>
-
-            <div class="skills__list grid">
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">JavaScript</h3>
-                  <span class="skills__number">90%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__js"></span>
-                </div>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">React</h3>
-                  <span class="skills__number">80%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__react"></span>
-                </div>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Angular 2+</h3>
-                  <span class="skills__number">80%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__react"></span>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">HTML</h3>
-                  <span class="skills__number">70%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__html"></span>
-                </div>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">CSS</h3>
-                  <span class="skills__number">70%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__css"></span>
-                </div>
-              </div>
-
-            </div>
+            <span class="hero__stat-label">Projects</span>
           </div>
-          <!--==================== SKILLS 1 ====================-->
-          <div class="skills__content ">
-            <div class="skills__header">
-              <i class="uil uil-server-alt skills__icon"></i>
-
-              <div>
-                <h1 class="skills__titles">Backend Developer</h1>
-                <span class="skills__subtitle">WEll EXPERIENCED</span>
-              </div>
-
-              <i class="uil uil-angle-down skills__arrow"></i>
+          <div class="hero__stat">
+            <div class="hero__stat-value">
+              <span class="hero__stat-number" data-count="8">0</span><span class="hero__stat-suffix">+</span>
             </div>
-
-            <div class="skills__list grid">
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Node JS</h3>
-                  <span class="skills__number">80%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__node"></span>
-                </div>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Express JS</h3>
-                  <span class="skills__number">70%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__express"></span>
-                </div>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Mongo DB</h3>
-                  <span class="skills__number">80%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__mongo"></span>
-                </div>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Amazon DynamoDB
-                  </h3>
-                  <span class="skills__number">80%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__mongo"></span>
-                </div>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">AWS Cloud</h3>
-                  <span class="skills__number">60%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__aws"></span>
-                </div>
-              </div>
-
-            </div>
+            <span class="hero__stat-label">Years</span>
           </div>
-
-          
+          <div class="hero__stat">
+            <div class="hero__stat-value">
+              <span class="hero__stat-text">AI</span>
+            </div>
+            <span class="hero__stat-label">Powered</span>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- ==================== FEATURED WORK ==================== -->
+    <section class="work section" id="work">
+      <div class="container">
+        <span class="section__label" style="color: var(--primary);">FEATURED WORK</span>
+        <h2 class="section__title">Selected Projects</h2>
+        <p class="section__subtitle">Real problems, real solutions, real impact.</p>
 
-    <!--==================== SERVICES ====================-->
+        <div class="work__grid">
+          <!-- Project 1: MyWorth.ai -->
+          <article class="work__card card animate-in">
+            <div class="work__card-inner">
+              <div class="work__info">
+                <span class="section__label" style="color: var(--primary);">01</span>
+                <h3 class="work__title">MyWorth.ai</h3>
+                <div class="work__tags">
+                  <span class="tag tag--primary">FinTech SaaS</span>
+                  <span class="tag tag--accent">AI-Powered</span>
+                  <span class="tag tag--secondary">Asset Management</span>
+                </div>
+                <div class="work__case-study">
+                  <p><span class="work__label">Problem:</span> Individuals and families lacked a secure, centralized platform to track, manage, and share their complete financial asset portfolio.</p>
+                  <p><span class="work__label work__label--blue">Solution:</span> Built a full-stack fintech SaaS with AI-powered document extraction, drag-and-drop upload, asset distribution analytics, collaborator sharing, and premium subscription billing.</p>
+                  <p><span class="work__label work__label--purple">Impact:</span> Users can upload any asset document and have it auto-parsed by AI, view portfolio distribution charts, and securely share access with family or advisors.</p>
+                </div>
+                <div class="work__tech">
+                  <span class="tag tag--outline">React</span>
+                  <span class="tag tag--outline">Node.js</span>
+                  <span class="tag tag--outline">MongoDB</span>
+                  <span class="tag tag--outline">AWS</span>
+                  <span class="tag tag--outline">Stripe</span>
+                  <span class="tag tag--outline">Claude AI</span>
+                </div>
+                <a href="https://dev.myworth.ai" target="_blank" rel="noopener" class="btn btn--ghost work__link">
+                  View Live
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+              </div>
+              <div class="work__preview">
+                <div class="work__preview-frame work__preview-frame--placeholder">
+                  <div class="work__placeholder">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    <span>Live Product</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: AI Voice Agent Platform -->
+          <article class="work__card card animate-in">
+            <div class="work__card-inner">
+              <div class="work__info">
+                <span class="section__label" style="color: var(--secondary);">02</span>
+                <h3 class="work__title">AI Voice Agent Platform</h3>
+                <div class="work__tags">
+                  <span class="tag tag--accent">AI/ML</span>
+                  <span class="tag tag--secondary">Voice AI</span>
+                  <span class="tag tag--warm">White-Label</span>
+                </div>
+                <div class="work__case-study">
+                  <p><span class="work__label">Problem:</span> Indian enterprises lacked an affordable, multilingual AI calling solution for lead qualification, appointment booking, and follow-ups.</p>
+                  <p><span class="work__label work__label--blue">Solution:</span> Building a white-label outbound AI calling platform using self-hosted Asterisk + Pipecat + Deepgram STT + Amazon Lex V2 + Polly TTS, with a serverless AWS pipeline for campaign management.</p>
+                  <p><span class="work__label work__label--purple">Impact:</span> Enables enterprises to deploy AI voice agents at sub-&#x20B9;10K/month, handling 150-200 calls/day with natural Hindi + English conversations and automated CRM updates.</p>
+                </div>
+                <div class="work__tech">
+                  <span class="tag tag--outline">Asterisk</span>
+                  <span class="tag tag--outline">Node.js</span>
+                  <span class="tag tag--outline">AWS Lambda</span>
+                  <span class="tag tag--outline">DynamoDB</span>
+                  <span class="tag tag--outline">Deepgram</span>
+                  <span class="tag tag--outline">Lex V2</span>
+                </div>
+                <span class="work__status work__status--dev">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  In Development
+                </span>
+              </div>
+              <div class="work__preview">
+                <div class="work__preview-frame work__preview-frame--placeholder">
+                  <div class="work__placeholder">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="1.5" opacity="0.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    <span>In Development</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Fluxiontek RAG Chatbot -->
+          <article class="work__card card animate-in">
+            <div class="work__card-inner">
+              <div class="work__info">
+                <span class="section__label" style="color: var(--accent);">03</span>
+                <h3 class="work__title">Fluxiontek RAG Chatbot</h3>
+                <div class="work__tags">
+                  <span class="tag tag--accent">AI/ML</span>
+                  <span class="tag tag--primary">RAG Pipeline</span>
+                  <span class="tag tag--secondary">Enterprise</span>
+                </div>
+                <div class="work__case-study">
+                  <p><span class="work__label">Problem:</span> Client needed a multi-user AI chatbot that could search and answer questions grounded in their proprietary documents.</p>
+                  <p><span class="work__label work__label--blue">Solution:</span> Built a RAG pipeline with LlamaIndex for document ingestion, ChromaDB for vector storage, Bedrock Titan for embeddings, and Claude Sonnet for generation — served via Chainlit UI with per-user sessions.</p>
+                  <p><span class="work__label work__label--purple">Impact:</span> Multiple users can now query company knowledge bases with cited, accurate answers — replacing hours of manual document searching.</p>
+                </div>
+                <div class="work__tech">
+                  <span class="tag tag--outline">Python</span>
+                  <span class="tag tag--outline">Claude Sonnet</span>
+                  <span class="tag tag--outline">LlamaIndex</span>
+                  <span class="tag tag--outline">ChromaDB</span>
+                  <span class="tag tag--outline">AWS Bedrock</span>
+                  <span class="tag tag--outline">Chainlit</span>
+                </div>
+                <span class="work__status work__status--delivered">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  POC Delivered
+                </span>
+              </div>
+              <div class="work__preview">
+                <div class="work__preview-frame work__preview-frame--placeholder">
+                  <div class="work__placeholder">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.5"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                    <span>Enterprise AI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Kangaroo Propane -->
+          <article class="work__card card animate-in">
+            <div class="work__card-inner">
+              <div class="work__info">
+                <span class="section__label" style="color: var(--accent-warm);">04</span>
+                <h3 class="work__title">Kangaroo Propane</h3>
+                <div class="work__tags">
+                  <span class="tag tag--primary">E-commerce</span>
+                  <span class="tag tag--secondary">Real-Time</span>
+                  <span class="tag tag--warm">Maps</span>
+                </div>
+                <div class="work__case-study">
+                  <p><span class="work__label">Problem:</span> Propane delivery services lacked real-time order tracking, leading to poor customer experience and manual stock management.</p>
+                  <p><span class="work__label work__label--blue">Solution:</span> Built a full e-commerce platform with live map-based delivery tracking, Firebase push notifications, Braintree payments, and an efficient inventory management system.</p>
+                  <p><span class="work__label work__label--purple">Impact:</span> Customers can now track deliveries in real-time on iOS and Android, significantly improving satisfaction and repeat orders.</p>
+                </div>
+                <div class="work__tech">
+                  <span class="tag tag--outline">React</span>
+                  <span class="tag tag--outline">Node.js</span>
+                  <span class="tag tag--outline">MongoDB</span>
+                  <span class="tag tag--outline">Google Maps</span>
+                  <span class="tag tag--outline">Firebase</span>
+                  <span class="tag tag--outline">Braintree</span>
+                </div>
+                <a href="https://kangaroopropane.com" target="_blank" rel="noopener" class="btn btn--ghost work__link">
+                  View Live
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+              </div>
+              <div class="work__preview">
+                <div class="work__preview-frame">
+                  <img src="assets/img/portfolio1.jpg" alt="Kangaroo Propane App" class="work__img" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Wave Marine -->
+          <article class="work__card card animate-in">
+            <div class="work__card-inner">
+              <div class="work__info">
+                <span class="section__label" style="color: var(--primary);">05</span>
+                <h3 class="work__title">Wave Marine</h3>
+                <div class="work__tags">
+                  <span class="tag tag--secondary">Marketplace</span>
+                  <span class="tag tag--primary">Admin Panel</span>
+                  <span class="tag tag--warm">Multi-vendor</span>
+                </div>
+                <div class="work__case-study">
+                  <p><span class="work__label">Problem:</span> Marine service industry lacked a unified platform connecting boat owners with service vendors for maintenance, cleaning, and crew services.</p>
+                  <p><span class="work__label work__label--blue">Solution:</span> Built a marketplace with real-time booking, vendor management, GPS tracking, payment wallet, and Kafka-powered event streaming for live service updates.</p>
+                  <p><span class="work__label work__label--purple">Impact:</span> Streamlined operations for boat wash, cleaning, system checks, and crew services — all orchestrated through a comprehensive admin panel.</p>
+                </div>
+                <div class="work__tech">
+                  <span class="tag tag--outline">Angular</span>
+                  <span class="tag tag--outline">Node.js</span>
+                  <span class="tag tag--outline">AWS</span>
+                  <span class="tag tag--outline">DynamoDB</span>
+                  <span class="tag tag--outline">MongoDB</span>
+                  <span class="tag tag--outline">Kafka</span>
+                </div>
+                <a href="https://www.wavemarinegroup.com" target="_blank" rel="noopener" class="btn btn--ghost work__link">
+                  View Live
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+              </div>
+              <div class="work__preview">
+                <div class="work__preview-frame">
+                  <img src="assets/img/wave.png" alt="Wave Marine Platform" class="work__img" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: United Transportation -->
+          <article class="work__card card animate-in">
+            <div class="work__card-inner">
+              <div class="work__info">
+                <span class="section__label" style="color: var(--secondary);">06</span>
+                <h3 class="work__title">United Transportation</h3>
+                <div class="work__tags">
+                  <span class="tag tag--secondary">Logistics</span>
+                  <span class="tag tag--primary">Dashboard</span>
+                  <span class="tag tag--accent">TMS</span>
+                </div>
+                <div class="work__case-study">
+                  <p><span class="work__label">Problem:</span> Client's logistics operations were fragmented across Notion, Ascend TMS, and manual processes — causing double data entry, 4+ months billing backlog, and revenue leakage.</p>
+                  <p><span class="work__label work__label--blue">Solution:</span> Designed a unified transport management system with order-to-billing workflow, HubSpot rate card integration, QuickBooks sync, and a mobile-friendly dispatch dashboard.</p>
+                  <p><span class="work__label work__label--purple">Impact:</span> Eliminated double data entry, automated billing workflows, and provided real-time visibility from order intake through invoicing.</p>
+                </div>
+                <div class="work__tech">
+                  <span class="tag tag--outline">React</span>
+                  <span class="tag tag--outline">AWS Lambda</span>
+                  <span class="tag tag--outline">DynamoDB</span>
+                  <span class="tag tag--outline">API Gateway</span>
+                  <span class="tag tag--outline">QuickBooks</span>
+                  <span class="tag tag--outline">HubSpot</span>
+                </div>
+                <span class="work__status work__status--dev">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  In Development
+                </span>
+              </div>
+              <div class="work__preview">
+                <div class="work__preview-frame work__preview-frame--placeholder">
+                  <div class="work__placeholder">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="1.5" opacity="0.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    <span>In Development</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 7: The Canadian Load Board -->
+          <article class="work__card card animate-in">
+            <div class="work__card-inner">
+              <div class="work__info">
+                <span class="section__label" style="color: var(--accent);">07</span>
+                <h3 class="work__title">The Canadian Load Board</h3>
+                <div class="work__tags">
+                  <span class="tag tag--primary">Logistics</span>
+                  <span class="tag tag--secondary">Platform</span>
+                  <span class="tag tag--warm">B2B</span>
+                </div>
+                <div class="work__case-study">
+                  <p><span class="work__label">Problem:</span> Canadian logistics brokers and carriers lacked a centralized platform for lead generation, load posting, and streamlined RFQ management.</p>
+                  <p><span class="work__label work__label--blue">Solution:</span> Built a cloud-based logistics platform with real-time lead generation, inventory management, Stripe-powered payments, and an automated RFQ workflow for brokers and carriers.</p>
+                  <p><span class="work__label work__label--purple">Impact:</span> Streamlined the entire broker-carrier relationship — from load discovery through payment — reducing manual coordination and accelerating deal cycles.</p>
+                </div>
+                <div class="work__tech">
+                  <span class="tag tag--outline">React</span>
+                  <span class="tag tag--outline">Node.js</span>
+                  <span class="tag tag--outline">MongoDB</span>
+                  <span class="tag tag--outline">Stripe</span>
+                  <span class="tag tag--outline">AWS</span>
+                </div>
+                <span class="work__status work__status--delivered">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  Delivered
+                </span>
+              </div>
+              <div class="work__preview">
+                <div class="work__preview-frame work__preview-frame--placeholder">
+                  <div class="work__placeholder">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Delivered</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TECH STACK ==================== -->
+    <section class="stack section" id="stack">
+      <div class="container">
+        <span class="section__label" style="color: var(--secondary);">TECH STACK</span>
+        <h2 class="section__title">Tools I Work With</h2>
+        <p class="section__subtitle">Battle-tested technologies for production-grade applications.</p>
+
+        <div class="stack__grid">
+          <!-- Frontend -->
+          <div class="stack__category card animate-in">
+            <h3 class="stack__category-title">
+              <span class="stack__category-dot" style="background: var(--primary);"></span>
+              Frontend
+            </h3>
+            <div class="stack__items">
+              <div class="stack__item">
+                <i class="devicon-javascript-plain colored"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="stack__item">
+                <i class="devicon-typescript-plain colored"></i>
+                <span>TypeScript</span>
+              </div>
+              <div class="stack__item">
+                <i class="devicon-react-original colored"></i>
+                <span>React</span>
+              </div>
+              <div class="stack__item">
+                <i class="devicon-angularjs-plain colored"></i>
+                <span>Angular</span>
+              </div>
+              <div class="stack__item">
+                <i class="devicon-html5-plain colored"></i>
+                <span>HTML5</span>
+              </div>
+              <div class="stack__item">
+                <i class="devicon-css3-plain colored"></i>
+                <span>CSS3</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="stack__category card animate-in">
+            <h3 class="stack__category-title">
+              <span class="stack__category-dot" style="background: var(--secondary);"></span>
+              Backend
+            </h3>
+            <div class="stack__items">
+              <div class="stack__item">
+                <i class="devicon-nodejs-plain colored"></i>
+                <span>Node.js</span>
+              </div>
+              <div class="stack__item">
+                <i class="devicon-express-original"></i>
+                <span>Express</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="stack__category card animate-in">
+            <h3 class="stack__category-title">
+              <span class="stack__category-dot" style="background: var(--accent);"></span>
+              Database
+            </h3>
+            <div class="stack__items">
+              <div class="stack__item">
+                <i class="devicon-mongodb-plain colored"></i>
+                <span>MongoDB</span>
+              </div>
+              <div class="stack__item">
+                <i class="devicon-dynamodb-plain colored"></i>
+                <span>DynamoDB</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cloud & AI -->
+          <div class="stack__category card animate-in">
+            <h3 class="stack__category-title">
+              <span class="stack__category-dot" style="background: var(--accent-warm);"></span>
+              Cloud & AI
+            </h3>
+            <div class="stack__items">
+              <div class="stack__item">
+                <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+                <span>AWS</span>
+              </div>
+              <div class="stack__item">
+                <svg class="stack__custom-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                <span>Claude AI</span>
+              </div>
+              <div class="stack__item">
+                <svg class="stack__custom-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                <span>AI/ML</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== AI-POWERED DEVELOPMENT ==================== -->
+    <section class="ai section" id="ai">
+      <div class="container">
+        <span class="section__label" style="color: var(--accent);">AI-POWERED DEVELOPMENT</span>
+        <h2 class="section__title">I build with AI, not just about AI</h2>
+        <p class="section__subtitle">AI is my multiplier — every project ships faster, with higher quality, and fewer bugs.</p>
+
+        <div class="ai__main">
+          <!-- Terminal Demo -->
+          <div class="ai__terminal animate-in--left">
+            <div class="terminal">
+              <div class="terminal__header">
+                <div class="terminal__dots">
+                  <span class="terminal__dot terminal__dot--red"></span>
+                  <span class="terminal__dot terminal__dot--yellow"></span>
+                  <span class="terminal__dot terminal__dot--green"></span>
+                </div>
+                <span class="terminal__title">claude-code — portfolio</span>
+              </div>
+              <div class="terminal__body" id="terminal-body">
+                <div class="terminal__line"><span class="terminal__prompt">$</span> <span class="terminal__cmd">claude "analyze auth module for security issues"</span></div>
+                <div class="terminal__line terminal__line--output"><span class="terminal__accent">  ▸</span> Reading 12 files...</div>
+                <div class="terminal__line terminal__line--output"><span class="terminal__accent">  ▸</span> Found 3 vulnerabilities (2 critical)</div>
+                <div class="terminal__line terminal__line--output"><span class="terminal__accent">  ▸</span> Auto-fixing with tests...</div>
+                <div class="terminal__line"><span class="terminal__prompt">$</span> <span class="terminal__cmd">claude "design API for payment service"</span></div>
+                <div class="terminal__line terminal__line--output"><span class="terminal__blue">  ▸</span> Architecture plan generated</div>
+                <div class="terminal__line terminal__line--output"><span class="terminal__blue">  ▸</span> 14 endpoints, 6 models, full test suite</div>
+                <div class="terminal__line terminal__line--success"><span class="terminal__green">✓</span> All tests passing</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Impact Stats -->
+          <div class="ai__stats animate-in--right">
+            <div class="ai__stat-card">
+              <span class="ai__stat-number" data-count="3">0</span>
+              <span class="ai__stat-suffix">x</span>
+              <p class="ai__stat-label">Faster prototyping</p>
+            </div>
+            <div class="ai__stat-card">
+              <span class="ai__stat-number" data-count="80">0</span>
+              <span class="ai__stat-suffix">%</span>
+              <p class="ai__stat-label">Test coverage standard</p>
+            </div>
+            <div class="ai__stat-card">
+              <span class="ai__stat-text">AI</span>
+              <p class="ai__stat-label">Augmented code review</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Capabilities -->
+        <div class="ai__capabilities">
+          <h3 class="ai__cap-title">What I Build With AI</h3>
+          <div class="ai__cap-grid">
+            <div class="ai__cap-card card animate-in">
+              <div class="ai__cap-icon" style="color: var(--accent);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
+              <h4>RAG Systems</h4>
+              <p>Retrieval-augmented generation for intelligent search and knowledge bases</p>
+            </div>
+            <div class="ai__cap-card card animate-in">
+              <div class="ai__cap-icon" style="color: var(--secondary);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <h4>AI-Integrated Apps</h4>
+              <p>Embedding AI capabilities into production web applications</p>
+            </div>
+            <div class="ai__cap-card card animate-in">
+              <div class="ai__cap-icon" style="color: var(--primary);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <h4>MCP Workflows</h4>
+              <p>Custom Model Context Protocol servers for development automation</p>
+            </div>
+            <div class="ai__cap-card card animate-in">
+              <div class="ai__cap-icon" style="color: var(--accent-warm);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <h4>Intelligent Automation</h4>
+              <p>AI-powered testing, code review, and architecture design</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tool pills -->
+        <div class="ai__tools animate-in">
+          <span class="pill tag--accent">Claude Code</span>
+          <span class="pill tag--secondary">MCP Servers</span>
+          <span class="pill tag--primary">RAG</span>
+          <span class="pill tag--warm">TDD Automation</span>
+          <span class="pill tag--accent">Security Review</span>
+          <span class="pill tag--secondary">Architecture</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
     <section class="services section" id="services">
-      <h2 class="section__title">Services</h2>
-      <span class="section__subtitle">What i offer</span>
+      <div class="container">
+        <span class="section__label" style="color: var(--primary);">WHAT I BUILD</span>
+        <h2 class="section__title">What I Can Build For You</h2>
+        <p class="section__subtitle">From idea to production — end-to-end development.</p>
 
-      <div class="services__container container grid">
-        <!--==================== SERVICES 1 ====================-->
-        <div class="services__content">
-          <div>
-            <i class="uil uil-web-grid services__icon"></i>
-            <h3 class="services__title">
-              UI/UX <br />
-              Designer
-            </h3>
-          </div>
-          <span class="
-                button button--flex button--small button--link
-                services__button
-              ">
-            View more
-            <i class="uil uil-arrow-right button__icon"></i>
-          </span>
-          <div class="services__modal">
-            <div class="services__modal-content">
-              <h4 class="services__modal-title">
-                UI/UX <br />
-                Designer
-              </h4>
-              <i class="uil uil-times services__modal-close"></i>
-
-              <ul class="services__modal-services grid">
-                <li class="services__modal-service">
-                  <i class="uil uil-check-circle services"></i>
-                  <p>I develop the user interface</p>
-                </li>
-
-                <li class="services__modal-service">
-                  <i class="uil uil-check-circle services"></i>
-                  <p>Web page Development</p>
-                </li>
-
-                <li class="services__modal-service">
-                  <i class="uil uil-check-circle services"></i>
-                  <p>I create UX elements interaction</p>
-                </li>
-
-                <li class="services__modal-service">
-                  <i class="uil uil-check-circle services"></i>
-                  <p>Develops new ideas into the web development</p>
-                </li>
-              </ul>
+        <div class="services__grid">
+          <div class="services__card card animate-in">
+            <div class="services__icon" style="color: var(--primary);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
+            <h3>Full-Stack Web Applications</h3>
+            <p>End-to-end development from UI to database. React, Angular, Node.js — whatever the project needs.</p>
           </div>
-        </div>
 
-        <!--==================== SERVICES 2 ====================-->
-        <div class="services__content">
-          <div>
-            <i class="uil uil-arrow services__icon"></i>
-            <h3 class="services__title">
-              Frontend <br />
-              Developer
-            </h3>
-          </div>
-          <span class="
-                button button--flex button--small button--link
-                services__button
-              ">
-            View more
-            <i class="uil uil-arrow-right button__icon"></i>
-          </span>
-          <div class="services__modal">
-            <div class="services__modal-content">
-              <h4 class="services__modal-title">
-                Frontend <br />
-                Developer
-              </h4>
-              <i class="uil uil-times services__modal-close"></i>
-
-              <ul class="services__modal-services grid">
-                <li class="services__modal-service">
-                  <i class="uil uil-check-circle services"></i>
-                  <p>I develop the animated Web page </p>
-                </li>
-
-                <li class="services__modal-service">
-                  <i class="uil uil-check-circle services"></i>
-                  <p>Web page Development</p>
-                </li>
-
-                <li class="services__modal-service">
-                  <i class="uil uil-check-circle services"></i>
-                  <p>Frontend developement with various frameworks(React)</p>
-                </li>
-
-                <li class="services__modal-service">
-                  <i class="uil uil-check-circle services"></i>
-                  <p>Learning and earning new ideas</p>
-                </li>
-              </ul>
+          <div class="services__card card animate-in">
+            <div class="services__icon" style="color: var(--secondary);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
             </div>
+            <h3>API & Backend Systems</h3>
+            <p>Scalable APIs, microservices, and cloud architecture on AWS. Built for growth.</p>
           </div>
-        </div>
 
-        <!--==================== SERVICES 3 ====================-->
-        <div class="services__content">
-          <div>
-            <i class="uil uil-database services__icon"></i>
-            <h3 class="services__title">
-              Backend <br />
-              Developer
-            </h3>
-          </div>
-          <span class="
-                button button--flex button--small button--link
-                services__button
-              ">
-            View more
-            <i class="uil uil-arrow-right button__icon"></i>
-          </span>
-          <div class="services__modal">
-            <div class="services__modal-content">
-              <h4 class="services__modal-title">
-                Backend <br />
-                Developer
-              </h4>
-              <i class="uil uil-times services__modal-close"></i>
-
-              <ul class="services__modal-services grid">
-                <li class="services__modal-service">
-                  <i class="uil uil-check-circle services"></i>
-                  <p>Handson MongoDB</p>
-                </li>
-
-                <li class="services__modal-service">
-                  <i class="uil uil-check-circle services"></i>
-                  <p>Backend framework in Node JS</p>
-                </li>
-
-                <li class="services__modal-service">
-                  <i class="uil uil-check-circle services"></i>
-                  <p>Dynamic Data base experience </p>
-                </li>
-
-                <li class="services__modal-service">
-                  <i class="uil uil-check-circle services"></i>
-                  <p>Stepping deep into backend daily</p>
-                </li>
-              </ul>
+          <div class="services__card card animate-in">
+            <div class="services__icon" style="color: var(--accent);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             </div>
+            <h3>AI-Integrated Solutions</h3>
+            <p>RAG systems, AI workflows, and intelligent features embedded into your product.</p>
+          </div>
+
+          <div class="services__card card animate-in">
+            <div class="services__icon" style="color: var(--accent-warm);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Performance & Architecture</h3>
+            <p>Code audits, performance optimization, and architecture consulting for existing apps.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!--==================== PORTFOLIO ====================-->
-    <section class="portfolio section" id="portfolio">
-      <h2 class="section__title">Portfolio</h2>
-      <span class="section__subtitle">Most recent work</span>
-
-      <div class="portfolio__container container swiper-container">
-        <div class="swiper-wrapper">
-          <!--==================== PORTFOLIO 1 ====================-->
-          <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/portfolio1.jpg" alt="" class="portfolio__img" />
-
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Kangaroo Propane App</h3>
-              <p class="portfolio__description">
-                This app is used to buy/Sell propane gas tanks.
-                It is an E-commerce website where Users can buy propane gas tanks and track their order In Real-time on
-                a map.
-              </p>
-              <a href="https://kangaroopropane.com" target="_blank"
-                class="button button--flex button--small portfolio__button">
-                Demo
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-            </div>
+    <!-- ==================== ABOUT ==================== -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__photo animate-in--left">
+            <img src="assets/img/my.png" alt="Rajneesh Sharma" class="about__img" />
           </div>
-
-          <!-- ==================== PORTFOLIO 2 ==================== -->
-       <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/wave.png" alt="" class="portfolio__img" />
-
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Wave Marine | Admin</h3>
-              <p class="portfolio__description">
-                A market place for owners and vendors to meet, book and facilitate marine service work. The app offers a wide range of services which includes boat wash, interior cleaning, bottom cleaning, sea strainers & system checks, crew, and much more.
-              </p>
-              <a href="https://www.wavemarinegroup.com" class="button button--flex button--small portfolio__button">
-                Demo
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-            </div>
-          </div>
-
-          <!--==================== PORTFOLIO 3 ====================-->
-          <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/portfolio-web.png" alt="" class="portfolio__img" />
-
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Rajneesh's Portfolio</h3>
-              <p class="portfolio__description">
-                Rajneesh's Portfolio Website for show casing UI UX work
-              </p>
-              <a href="https://rajneeshksharma.github.io/" class="button button--flex button--small portfolio__button">
-                Demo
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-            </div>
-          </div> 
-        </div>
-
-        <!-- Add Arrows -->
-        <div class="swiper-button-next">
-          <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-        </div>
-        <div class="swiper-button-prev">
-          <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-        </div>
-
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-      </div>
-    </section>
-
-    <!--==================== PROJECT IN MIND ====================-->
-    <section class="project section">
-      <div class="project__bg">
-        <div class="project__container container grid">
-          <div class="project__data">
-            <h2 class="project__title">You have a new project</h2>
-            <p class="project__description">
-              Contact me now for the projects.
+          <div class="about__content animate-in--right">
+            <span class="section__label" style="color: var(--secondary);">ABOUT ME</span>
+            <h2 class="section__title">Rajneesh Sharma</h2>
+            <p class="about__text">
+              Senior Full Stack Developer based in Chandigarh, India. 8+ years building web applications for clients across the globe — from e-commerce platforms to marine marketplaces. I ship fast, write clean code, and use AI to deliver at a level that used to take entire teams.
             </p>
-            <a href="#contact" class="button button--flex button--white">
-              contact Me
-              <i class="uil uil-message project__icon button__icon"></i>
-            </a>
+            <div class="about__stats">
+              <div class="about__stat">
+                <span class="about__stat-number">8+</span>
+                <span class="about__stat-label">Years Experience</span>
+              </div>
+              <div class="about__stat">
+                <span class="about__stat-number">20+</span>
+                <span class="about__stat-label">Projects Delivered</span>
+              </div>
+              <div class="about__stat">
+                <span class="about__stat-number">6+</span>
+                <span class="about__stat-label">Companies</span>
+              </div>
+            </div>
+            <div class="about__socials">
+              <a href="https://github.com/rajneeshksharma" target="_blank" rel="noopener" class="about__social" aria-label="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
           </div>
-          <img src="assets/img/me.png" alt="" class="project__img" />
         </div>
       </div>
     </section>
-    <!--==================== CONTACT ME ====================-->
+
+    <!-- ==================== GITHUB ACTIVITY ==================== -->
+    <section class="github section" id="github">
+      <div class="container">
+        <span class="section__label" style="color: var(--primary);">OPEN SOURCE</span>
+        <h2 class="section__title">GitHub Activity</h2>
+        <div class="github__calendar card animate-in">
+          <div class="calendar">Loading contribution data...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
     <section class="contact section" id="contact">
-      <h2 class="section__title">Contact Me</h2>
-      <span class="section__subtitle">Get in touch</span>
-
-      <div class="contact__container container grid">
-        <div>
-          <div class="contact__information">
-            <i class="uil uil-phone contact__icon"></i>
-
-            <div>
-              <h3 class="contact__title">Call Me</h3>
-              <span class="contact__subtitle">
-                <a class="contact__subtitle_val" href="tel:+917018403967">701-840-3967</a>
-              </span>
-            </div>
-          </div>
-
-
-          <div class="contact__information">
-            <i class="uil uil-envelope contact__icon"></i>
-
-            <div>
-              <h3 class="contact__title">Email</h3>
-              <span class="contact__subtitle">
-                <a class="contact__subtitle_val"
-                  href="mailto:k.rajneesh.sharma@gmail.com">k.rajneesh.sharma@gmail.com</a>
-              </span>
-            </div>
-          </div>
-
-
-          <div class="contact__information">
-            <i class="uil uil-map-marker contact__icon"></i>
-
-            <div>
-              <h3 class="contact__title">Location</h3>
-              <span class="contact__subtitle">Chandigarh - India</span>
-            </div>
-          </div>
-
+      <div class="container">
+        <div class="contact__header">
+          <span class="section__label" style="color: var(--primary);">GET IN TOUCH</span>
+          <h2 class="contact__title animate-in">Let's build something great together</h2>
+          <p class="contact__subtitle animate-in">Have a project in mind? I'm currently available for freelance work.</p>
         </div>
 
-        <form action="" class="contact__form grid">
-          <div class="contact__inputs grid">
-            <div class="contact__content">
-              <label for="" class="contact__label">Name</label>
-              <input id="contact_me_name" type="text" class="contact__input">
+        <div class="contact__grid">
+          <div class="contact__info animate-in--left">
+            <div class="contact__item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:k.rajneesh.sharma@gmail.com">k.rajneesh.sharma@gmail.com</a>
+              </div>
             </div>
-
-            <div class="contact__content">
-              <label for="" class="contact__label">Email</label>
-              <input id="contact_me_email" type="email" class="contact__input">
+            <div class="contact__item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <div>
+                <h4>Phone</h4>
+                <a href="tel:+917018403967">+91 701-840-3967</a>
+              </div>
             </div>
+            <div class="contact__item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <h4>Location</h4>
+                <span>India</span>
+              </div>
+            </div>
+          </div>
 
-          </div>
-          <div class="contact__content">
-            <label for="" class="contact__label">Project</label>
-            <input id="contact_me_project" type="project" class="contact__input">
-          </div>
-          <div class="contact__content">
-            <label for="" class="contact__label">Message</label>
-            <textarea id="contact_me_message" name="" id="" cols="0" rows="7" class="contact__input"></textarea>
-          </div>
-          <div>
-            <a href="" class="button button--flex Send_Message">
+          <form class="contact__form animate-in--right" id="contact-form">
+            <div class="contact__form-row">
+              <div class="contact__field">
+                <label for="contact-name" class="contact__label">Name</label>
+                <input type="text" id="contact-name" class="contact__input" required />
+              </div>
+              <div class="contact__field">
+                <label for="contact-email" class="contact__label">Email</label>
+                <input type="email" id="contact-email" class="contact__input" required />
+              </div>
+            </div>
+            <div class="contact__field">
+              <label for="contact-project" class="contact__label">Project</label>
+              <input type="text" id="contact-project" class="contact__input" />
+            </div>
+            <div class="contact__field">
+              <label for="contact-message" class="contact__label">Message</label>
+              <textarea id="contact-message" class="contact__input contact__textarea" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">
               Send Message
-              <i class="uil uil-message button__icon"></i>
-            </a>
-          </div>
-        </form>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </form>
+        </div>
       </div>
     </section>
-
-    <section class="contact section" id="contact">
-      <div class="contact__container container ">
-        <div class="calendar">
-          <!-- Loading stuff -->
-          Loading the data just for you.
-        </div> 
-      </div>
-    </section>
-
   </main>
 
-  <!--==================== FOOTER ====================-->
+  <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
-    <div class="footer__bg">
-      <div class="footer__container container grid">
-        <div>
-          <h1 class="footer__title">Rajneesh Sharma</h1>
-          <span class="footer__subtitle">Full Stack Developer</span>
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="footer__logo">R<span style="color: var(--primary);">.</span>S</span>
+          <p class="footer__tagline">Senior Full Stack Developer</p>
         </div>
-
-        <ul class="footer__links">
-          <li>
-            <a href="#services" class="footer__link">Services</a>
-          </li>
-          <li>
-            <a href="#portfolio" class="footer__link">Portfolio</a>
-          </li>
-          <li>
-            <a href="#contact" class="footer__link">Contactme</a>
-          </li>
-        </ul>
-
+        <nav class="footer__nav">
+          <a href="#work">Work</a>
+          <a href="#stack">Stack</a>
+          <a href="#ai">AI</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
         <div class="footer__socials">
-
-          <a href="https://github.com/rajneeshksharma" target="_blank" class="footer__social">
-            <i class="uil uil-github"></i>
+          <a href="https://github.com/rajneeshksharma" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           </a>
-
         </div>
       </div>
-
-      <p class="footer__copy">&#169; Made with love In India</p>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Rajneesh Sharma. Built with AI-augmented workflows.</p>
+      </div>
     </div>
   </footer>
 
-  <!--==================== SCROLL TOP ====================-->
-  <a href="" class="scrollup" id="scroll-up">
-    <i class="uil uil-arrow-up scrollup__icon"></i>
-  </a>
-  <!--==================== SWIPER JS ====================-->
-  <script src="assets/js/swiper-bundle.min.js"></script>
+  <!-- ==================== SCROLL TO TOP ==================== -->
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </button>
 
-  <!--==================== MAIN JS ====================-->
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- GitHub Calendar -->
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+
+  <!-- Main JS -->
   <script src="assets/js/main.js"></script>
 </body>
-<script>
-  GitHubCalendar(".calendar", "rajneeshksharma");
-
-  // or enable responsive functionality:
-  GitHubCalendar(".calendar", "rajneeshksharma", { responsive: true });
-
-  // Use a proxy
-  GitHubCalendar(".calendar", "rajneeshksharma", {
-     proxy (username) {
-       return fetch(`https://your-proxy.com/github?user=${username}`)
-     }
-  }).then(r => r.text()).catch(err=>console.log(err));
-</script>
 </html>
