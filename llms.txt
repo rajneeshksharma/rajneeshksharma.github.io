@@ -1,0 +1,41 @@
+# Rajneesh Sharma — Portfolio
+
+> Senior Full Stack Developer & AI Developer based in India. Available for freelance projects.
+
+## About
+
+Rajneesh Sharma (also known as Rajneesh Kumar Sharma) is a Senior Full Stack JavaScript Developer with 8+ years of experience. Based in North India, he builds high-performance web applications and AI-integrated solutions for clients worldwide.
+
+## Core Skills
+
+- Full Stack Development: React, Next.js, Node.js, TypeScript, Express
+- AI Development: RAG systems, AI automation, MCP workflows, Claude Code
+- Cloud & DevOps: AWS, Docker, CI/CD
+- Databases: MongoDB, PostgreSQL, Redis
+- Architecture: Microservices, REST APIs, GraphQL, real-time systems
+
+## What He Builds
+
+- Full-stack web applications (React + Node.js)
+- AI-integrated solutions (RAG chatbots, intelligent automation)
+- API and backend systems (scalable, production-grade)
+- Performance-optimized architecture
+
+## Notable Projects
+
+- MyWorth.ai — AI-powered FinTech SaaS for asset management
+- AI Voice Agent Platform — Real-time multilingual voice AI with Pipecat + Deepgram
+- Fluxiontek RAG Chatbot — Enterprise knowledge base with Chainlit + LangChain
+- Kangaroo Propane — Full-stack propane delivery platform
+- Wave Marine — Marine equipment marketplace
+
+## AI Expertise
+
+Rajneesh builds WITH AI, not just about AI. He uses Claude Code, RAG pipelines, MCP server integrations, and AI-augmented development workflows to ship faster and deliver more.
+
+## Contact
+
+- Website: https://rajneeshksharma.github.io/
+- GitHub: https://github.com/rajneeshksharma
+- Email: k.rajneesh.sharma@gmail.com
+- Location: North India

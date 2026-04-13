@@ -1,0 +1,6 @@
+# robots.txt — rajneeshksharma.github.io
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rajneeshksharma.github.io/sitemap.xml

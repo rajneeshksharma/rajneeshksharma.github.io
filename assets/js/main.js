@@ -104,6 +104,16 @@ themeBtn.addEventListener('click', () => {
   localStorage.setItem('theme', next);
 });
 
+/*==================== PROJECT ACCORDION ====================*/
+document.querySelectorAll('.work__card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('a')) return;
+    const isExpanded = card.classList.contains('work__card--expanded');
+    document.querySelectorAll('.work__card--expanded').forEach(c => c.classList.remove('work__card--expanded'));
+    if (!isExpanded) card.classList.add('work__card--expanded');
+  });
+});
+
 /*==================== CONTACT FORM (MAILTO) ====================*/
 const contactForm = document.getElementById('contact-form');
 
