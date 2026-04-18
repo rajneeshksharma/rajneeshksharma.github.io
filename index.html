@@ -130,6 +130,7 @@
   <!-- CSS (preload for faster FCP) -->
   <link rel="preload" as="style" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/hero.css" />
 
   <!-- Preload LCP image -->
   <link rel="preload" as="image" type="image/webp" href="assets/img/my.webp" />
@@ -174,54 +175,113 @@
   <main class="main">
     <!-- ==================== HERO ==================== -->
     <section class="hero" id="hero">
-      <div class="gradient-mesh"></div>
-      <div class="gradient-mesh gradient-mesh--accent"></div>
+      <!-- Background layers -->
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__grid"></div>
+        <div class="hero__blob hero__blob--emerald"></div>
+        <div class="hero__blob hero__blob--cyan"></div>
+        <div class="hero__noise"></div>
+        <canvas class="hero__parallax" id="heroParallax"></canvas>
+      </div>
+
       <div class="hero__container container">
-        <div class="hero__content">
-          <div class="hero__available">
-            <span class="hero__dot"></span>
-            <span class="hero__available-text">Ready to ship your idea</span>
+        <!-- LEFT: copy -->
+        <div class="hero__copy">
+          <div class="hero__pill">
+            <span class="hero__pill-dot"></span>
+            <span class="hero__pill-text">Let's build something</span>
           </div>
 
           <h1 class="hero__title">
-            Turning complex problems into
-            <span class="hero__title-gradient">elegant solutions</span>
+            <span class="hero__word">Turning</span>
+            <span class="hero__word">complex</span>
+            <span class="hero__word">problems</span>
+            <span class="hero__word">into</span>
+            <span class="hero__title-gradient">
+              <span class="hero__word">elegant</span>
+              <span class="hero__word">solutions</span>
+            </span>
           </h1>
 
-          <h2 class="hero__subtitle">
-            Senior Full Stack Developer / AI-Augmented Workflows / <span id="experienceYears"></span>+ Years
-          </h2>
+          <p class="hero__tagline">
+            <span class="hero__tagline-static">I</span>
+            <span class="hero__verb" id="heroVerb">build</span><span class="hero__caret">▋</span>
+            <span class="hero__tagline-static">production software with AI-native workflows.</span>
+          </p>
+
+          <p class="hero__credentials">
+            Senior Full Stack &middot; <span id="experienceYears"></span>+ Years &middot; India &rarr; Remote
+          </p>
 
           <div class="hero__actions">
             <a href="#contact" class="btn btn--primary">
               Let's Talk
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
-            <a href="#work" class="btn btn--ghost">View My Work</a>
+            <a href="#work" class="btn btn--ghost">
+              View My Work
+              <svg class="hero__ghost-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <div class="hero__stat-value">
+                <span class="hero__stat-number" data-count="20">0</span><span class="hero__stat-suffix">+</span>
+              </div>
+              <span class="hero__stat-label">Projects</span>
+            </div>
+            <div class="hero__stat">
+              <div class="hero__stat-value">
+                <span class="hero__stat-number" data-count="8">0</span><span class="hero__stat-suffix">+</span>
+              </div>
+              <span class="hero__stat-label">Years</span>
+            </div>
+            <div class="hero__stat">
+              <div class="hero__stat-value">
+                <span class="hero__stat-text">AI</span>
+              </div>
+              <span class="hero__stat-label">Powered</span>
+            </div>
           </div>
         </div>
 
-        <div class="hero__stats">
-          <div class="hero__stat">
-            <div class="hero__stat-value">
-              <span class="hero__stat-number" data-count="20">0</span><span class="hero__stat-suffix">+</span>
+        <!-- RIGHT: terminal + orbits -->
+        <div class="hero__stage" aria-hidden="true">
+          <div class="hero__orbits">
+            <div class="hero__orbit hero__orbit--outer">
+              <div class="hero__badge" data-tech="React" style="--i:0"><svg viewBox="-11.5 -10.23 23 20.46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="0" cy="0" r="2.05" fill="#61dafb"/><g stroke="#61dafb" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/></g></svg></div>
+              <div class="hero__badge" data-tech="Node.js" style="--i:1"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#8cc84b" d="M12 1.6 2 7.2v9.6L12 22.4l10-5.6V7.2L12 1.6zm-1 6.4h2v8h-2v-8z"/></svg></div>
+              <div class="hero__badge" data-tech="TypeScript" style="--i:2"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#3178c6"/><path fill="#fff" d="M9 11h6v1.3h-2.3V18h-1.4v-5.7H9V11zm7.2 5.3c.3.5.9.9 1.7.9.8 0 1.1-.3 1.1-.7 0-.5-.4-.7-1.3-1.1-1.4-.6-2.1-1.1-2.1-2.2 0-1.2 1-2 2.3-2 1 0 1.7.3 2.2 1l-1.1.7c-.2-.4-.6-.6-1.1-.6-.5 0-.8.3-.8.6 0 .4.3.6 1.2 1 1.5.6 2.2 1.1 2.2 2.3 0 1.3-1 2-2.5 2-1.4 0-2.2-.6-2.6-1.4l1.1-.5z"/></svg></div>
+              <div class="hero__badge" data-tech="Next.js" style="--i:3"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#000"/><path fill="#fff" d="M9.5 7h1.5v10h-1.5V9.7l6.4 8.4c-.5.3-1 .6-1.6.7L9.5 12.3V7zm5.5 0h1.4v6.2L15 11.4V7z"/></svg></div>
             </div>
-            <span class="hero__stat-label">Projects</span>
+            <div class="hero__orbit hero__orbit--inner">
+              <div class="hero__badge" data-tech="AWS" style="--i:0"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#ff9900" d="M6.8 11.1c0 .3 0 .5.1.7l.3.6v.2l-.5.3h-.2l-.4-.4-.3-.5c-.6.7-1.4 1-2.3 1-.7 0-1.2-.2-1.6-.6-.4-.4-.6-.9-.6-1.5 0-.7.2-1.2.7-1.6.5-.4 1.1-.6 2-.6.3 0 .6 0 .9.1l1 .2v-.6c0-.6-.1-1-.4-1.2-.2-.2-.7-.3-1.3-.3a5 5 0 0 0-1.8.4l-.3.1h-.1v-.5l.1-.3c.1 0 .3-.1.5-.2l.9-.2.9-.1c1 0 1.7.2 2.1.6.4.4.7 1.1.7 2v2.6zm-3.2.9.7-.1.6-.4.3-.5v-.9l-.8-.1h-.8c-.5 0-.9.1-1.1.3-.2.2-.4.5-.4.9 0 .3.1.6.3.7.2.2.4.3.7.3zm6.4.7-.3-.1-.1-.3L8.3 7.5l-.1-.3.1-.2h.8l.2.1.1.3 1 4 1-4 .1-.3.2-.1h.7l.2.1.1.3 1 4 1.1-4 .1-.3.2-.1h.7l.2.2-.1.3-1.6 4.8-.2.3-.3.1h-.7l-.3-.1-.1-.3-1-3.9-1 3.9-.1.3-.3.1h-.7zm10.2.2c-.3 0-.7-.1-1-.2l-.8-.3-.2-.3v-.5l.1-.1h.2l.2.1.5.2c.4.1.7.1 1 .1s.6 0 .8-.2.3-.3.3-.5 0-.3-.2-.4l-.6-.3-.9-.3-.9-.5c-.2-.2-.4-.4-.5-.6s-.2-.5-.2-.8.1-.6.2-.9l.5-.5.7-.3c.3-.1.5-.1.8-.1h.5l.4.1.4.1.3.1.2.2.1.2v.3l-.1.1h-.2l-.2-.1-.5-.2a1.8 1.8 0 0 0-.7-.1c-.4 0-.6 0-.8.2s-.2.3-.2.5c0 .2.1.3.2.4l.6.3 1 .3.8.4.4.6.1.7c0 .4-.1.7-.2.9l-.5.6-.8.3-.9.1z"/></svg></div>
+              <div class="hero__badge" data-tech="PostgreSQL" style="--i:1"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#336791" d="M17.1 3c-1 0-2 .3-2.8.7a8.7 8.7 0 0 0-3 0 5 5 0 0 0-2.2-.6c-1.8 0-3 1-3.7 2.4C4.5 7.2 4.7 10 5.5 13l1 3c.5 1.2 1.5 2 2.7 2 .9 0 1.6-.4 2.2-.8.5.3 1.1.5 1.8.5 1 0 1.9-.4 2.5-1 .4.1.7.2 1 .2 1.6 0 2.8-1.7 3.6-4.5.9-3.1 1-5.6 0-7.4a3.8 3.8 0 0 0-3.2-2zm-.2 1.2c1 0 1.9.4 2.5 1.4.7 1.4.6 3.5-.2 6.3-.7 2.5-1.7 3.7-2.5 3.7-.3 0-.7-.1-1.1-.4.7-1 1.1-2.3 1.1-3.8 0-.4 0-.8-.1-1.1v-.2c0-.3-.1-.5-.2-.7.1-.1.1-.3.1-.4 0-.7-.6-1.1-1.4-1h-.2c-.3 0-.5.2-.7.3l-.1-.3c-.5-.8-1.4-1.2-2.4-1.2-.6 0-1.2.1-1.7.4-.3-.3-.9-.8-1.7-.8-.4 0-.8.1-1.1.3.6-.5 1.4-.8 2.3-.8.7 0 1.3.1 1.8.4h.2c.8-.5 1.7-.8 2.7-.8l.7.1.7-.3c.4-.1.8-.2 1.3-.2zM8.6 5c.5 0 1 .2 1.3.5a4 4 0 0 0-1 1.5c-.5.8-.7 1.7-.7 2.5 0 .8.1 1.6.3 2.3v.3l.2.4v.2c-.1.3-.3.6-.4 1-.4.4-.9.8-1.5.8-.6 0-1-.3-1.3-1l-.8-2.5c-.8-2.8-1-5.3-.3-7 .5-1 1.4-1.7 2.7-1.8a3 3 0 0 1 1.5.4L8.6 5z"/></svg></div>
+              <div class="hero__badge" data-tech="Claude" style="--i:2"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#d97757" d="M12 2 5 22h3.8l1.4-4.3h5.6L17.2 22H21L14 2h-2zm-.9 5 2 6h-4l2-6z"/></svg></div>
+              <div class="hero__badge" data-tech="Docker" style="--i:3"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#2496ed" d="M22 10.5h-2.4v-2H17v2h-2.4v-2H12v2H9.6v-2H7.2v2H4.8V8H2.4v2.5c0 3.8 2.5 7 6.3 7.4 1.2.1 2.5.1 3.7 0 3.2-.2 5.8-2 7.1-4.8.1-.3.2-.3.5-.3h1.1c.8 0 1.1-.7.9-1.3zM6.7 5.4H9v2.1H6.7V5.4zm2.9 0H12v2.1H9.6V5.4zm3 0H15v2.1h-2.4V5.4zm3 0h2.4v2.1h-2.4V5.4zm-6-3H12v2.1H9.6V2.4zm3 0H15v2.1h-2.4V2.4z"/></svg></div>
+            </div>
           </div>
-          <div class="hero__stat">
-            <div class="hero__stat-value">
-              <span class="hero__stat-number" data-count="8">0</span><span class="hero__stat-suffix">+</span>
+
+          <div class="hero__terminal">
+            <div class="hero__terminal-bar">
+              <span class="hero__terminal-dot hero__terminal-dot--red"></span>
+              <span class="hero__terminal-dot hero__terminal-dot--yellow"></span>
+              <span class="hero__terminal-dot hero__terminal-dot--green"></span>
+              <span class="hero__terminal-title">~/rajneesh — zsh</span>
             </div>
-            <span class="hero__stat-label">Years</span>
-          </div>
-          <div class="hero__stat">
-            <div class="hero__stat-value">
-              <span class="hero__stat-text">AI</span>
+            <div class="hero__terminal-body">
+              <pre class="hero__terminal-code" id="heroTerminalCode"></pre>
+              <span class="hero__terminal-cursor" id="heroTerminalCursor">▋</span>
             </div>
-            <span class="hero__stat-label">Powered</span>
           </div>
         </div>
       </div>
+
+      <a href="#work" class="hero__scroll-cue" aria-label="Scroll to work">
+        <span>scroll</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </a>
     </section>
 
     <!-- ==================== FEATURED WORK ==================== -->
@@ -1194,5 +1254,6 @@
 
   <!-- Main JS -->
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/hero.js" defer></script>
 </body>
 </html>

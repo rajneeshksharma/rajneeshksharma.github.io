@@ -150,12 +150,6 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (!prefersReducedMotion) {
-    // Hero animations (page load) — use fromTo to avoid CSS class conflicts
-    gsap.fromTo('.hero__available', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.6, delay: 0.2 });
-    gsap.fromTo('.hero__title', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, delay: 0.4 });
-    gsap.fromTo('.hero__subtitle', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, delay: 0.7 });
-    gsap.fromTo('.hero__actions', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, delay: 0.9 });
-    gsap.fromTo('.hero__stats', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, delay: 1.1 });
 
     // Generic scroll-triggered fade-in
     document.querySelectorAll('.animate-in').forEach(el => {
@@ -196,21 +190,6 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
           trigger: el,
           start: 'top 85%',
           once: true
-        }
-      });
-    });
-
-    // Hero stat count-up
-    document.querySelectorAll('.hero__stat-number[data-count]').forEach(el => {
-      const target = parseInt(el.dataset.count);
-      gsap.to(el, {
-        textContent: target,
-        duration: 1.5,
-        delay: 1.2,
-        ease: 'power2.out',
-        snap: { textContent: 1 },
-        onUpdate: function() {
-          el.textContent = Math.round(parseFloat(el.textContent));
         }
       });
     });
