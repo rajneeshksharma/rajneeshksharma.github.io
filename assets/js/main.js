@@ -133,6 +133,164 @@ if (typeof GitHubCalendar !== 'undefined') {
   GitHubCalendar('.calendar', 'rajneeshksharma', { responsive: true });
 }
 
+/*==================== GITHUB STATS + REPOS ====================*/
+(function loadGitHubData() {
+  const GH_USER = 'rajneeshksharma';
+  const CACHE_KEY = 'gh_stats_v1';
+  const CACHE_TTL = 6 * 60 * 60 * 1000; // 6h
+
+  const LANG_COLORS = {
+    JavaScript: '#f1e05a', TypeScript: '#3178c6', Python: '#3572A5',
+    HTML: '#e34c26', CSS: '#563d7c', SCSS: '#c6538c', Shell: '#89e051',
+    Java: '#b07219', Go: '#00ADD8', Rust: '#dea584', PHP: '#4F5D95',
+    Ruby: '#701516', C: '#555555', 'C++': '#f34b7d', 'C#': '#178600',
+    Swift: '#F05138', Kotlin: '#A97BFF', Vue: '#41b883', Dart: '#00B4AB'
+  };
+
+  const statsEl = document.getElementById('github-stats');
+  const reposEl = document.getElementById('github-repos');
+  if (!statsEl) return;
+
+  const setStat = (key, val) => {
+    const el = statsEl.querySelector(`[data-stat="${key}"]`);
+    if (el) el.textContent = val;
+  };
+
+  const escapeHtml = (s) => String(s).replace(/[&<>"']/g, c => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[c]));
+
+  const renderRepos = (repos) => {
+    if (!reposEl) return;
+    if (!repos.length) {
+      reposEl.innerHTML = '<div class="github__repos-loading">No public repositories found.</div>';
+      return;
+    }
+    reposEl.innerHTML = repos.map(r => {
+      const desc = r.description ? escapeHtml(r.description) : '<em style="opacity:0.6">No description</em>';
+      const lang = r.language || '—';
+      const color = LANG_COLORS[r.language] || 'var(--primary)';
+      return `
+        <a href="${escapeHtml(r.html_url)}" target="_blank" rel="noopener noreferrer" class="github__repo card">
+          <span class="github__repo-name">${escapeHtml(r.name)}</span>
+          <p class="github__repo-desc">${desc}</p>
+          <div class="github__repo-meta">
+            <span class="github__repo-lang" style="--lang-color:${color}">${escapeHtml(lang)}</span>
+            <span class="github__repo-stars">★ ${r.stargazers_count}</span>
+          </div>
+        </a>
+      `;
+    }).join('');
+  };
+
+  const applyData = (data) => {
+    setStat('repos', data.publicRepos);
+    setStat('stars', data.totalStars);
+    setStat('followers', data.followers);
+    setStat('language', data.topLanguage || '—');
+    renderRepos(data.topRepos);
+  };
+
+  // Try cache first
+  try {
+    const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+    if (cached && (Date.now() - cached.t) < CACHE_TTL) {
+      applyData(cached.d);
+      return;
+    }
+  } catch (e) { /* ignore cache errors */ }
+
+  Promise.all([
+    fetch(`https://api.github.com/users/${GH_USER}`).then(r => r.ok ? r.json() : Promise.reject(r.status)),
+    fetch(`https://api.github.com/users/${GH_USER}/repos?per_page=100&sort=updated`).then(r => r.ok ? r.json() : Promise.reject(r.status))
+  ]).then(([user, repos]) => {
+    const ownRepos = repos.filter(r => !r.fork);
+
+    const totalStars = ownRepos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
+
+    const langCounts = {};
+    ownRepos.forEach(r => { if (r.language) langCounts[r.language] = (langCounts[r.language] || 0) + 1; });
+    const topLanguage = Object.keys(langCounts).sort((a, b) => langCounts[b] - langCounts[a])[0];
+
+    const topRepos = [...ownRepos]
+      .sort((a, b) => (b.stargazers_count - a.stargazers_count) || (new Date(b.pushed_at) - new Date(a.pushed_at)))
+      .slice(0, 6);
+
+    const data = {
+      publicRepos: user.public_repos,
+      totalStars,
+      followers: user.followers,
+      topLanguage,
+      topRepos: topRepos.map(r => ({
+        name: r.name,
+        html_url: r.html_url,
+        description: r.description,
+        language: r.language,
+        stargazers_count: r.stargazers_count
+      }))
+    };
+
+    applyData(data);
+
+    try {
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), d: data }));
+    } catch (e) { /* ignore quota errors */ }
+  }).catch(() => {
+    if (reposEl) reposEl.innerHTML = '<div class="github__repos-loading">Unable to load GitHub data right now.</div>';
+  });
+})();
+
+/*==================== GITHUB YEARLY CONTRIBUTIONS ====================*/
+(function loadGitHubYears() {
+  const GH_USER = 'rajneeshksharma';
+  const CACHE_KEY = 'gh_years_v1';
+  const CACHE_TTL = 6 * 60 * 60 * 1000;
+
+  const yearsEl = document.getElementById('github-years');
+  if (!yearsEl) return;
+
+  const render = (years) => {
+    if (!years.length) {
+      yearsEl.innerHTML = '<div class="github__years-loading">No contribution data available.</div>';
+      return;
+    }
+    yearsEl.innerHTML = years.map(({ year, count }) => `
+      <a class="github__year" href="https://github.com/${GH_USER}?tab=overview&from=${year}-01-01&to=${year}-12-31" target="_blank" rel="noopener noreferrer">
+        <span class="github__year-label">${year}</span>
+        <span class="github__year-count">${count.toLocaleString()}</span>
+        <span class="github__year-suffix">contribs</span>
+      </a>
+    `).join('');
+  };
+
+  try {
+    const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+    if (cached && (Date.now() - cached.t) < CACHE_TTL) {
+      render(cached.d);
+      return;
+    }
+  } catch (e) { /* ignore */ }
+
+  fetch(`https://github-contributions-api.jogruber.de/v4/${GH_USER}?y=all`)
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(data => {
+      const totals = data.total || {};
+      const years = Object.keys(totals)
+        .filter(k => /^\d{4}$/.test(k))
+        .map(y => ({ year: Number(y), count: totals[y] }))
+        .sort((a, b) => b.year - a.year);
+
+      render(years);
+
+      try {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), d: years }));
+      } catch (e) { /* ignore quota */ }
+    })
+    .catch(() => {
+      yearsEl.innerHTML = '<div class="github__years-loading">Unable to load yearly totals.</div>';
+    });
+})();
+
 /*==================== GSAP ANIMATIONS ====================*/
 if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);

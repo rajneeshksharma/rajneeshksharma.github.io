@@ -832,9 +832,34 @@
       <div class="container">
         <span class="section__label" style="color: var(--primary);">OPEN SOURCE</span>
         <h2 class="section__title">GitHub Activity</h2>
+
+        <div class="github__stats animate-in" id="github-stats">
+          <div class="github__stat card">
+            <span class="github__stat-value" data-stat="repos">—</span>
+            <span class="github__stat-label">Repositories</span>
+          </div>
+          <div class="github__stat card">
+            <span class="github__stat-value" data-stat="stars">—</span>
+            <span class="github__stat-label">Total Stars</span>
+          </div>
+          <div class="github__stat card">
+            <span class="github__stat-value" data-stat="followers">—</span>
+            <span class="github__stat-label">Followers</span>
+          </div>
+          <div class="github__stat card">
+            <span class="github__stat-value" data-stat="language">—</span>
+            <span class="github__stat-label">Top Language</span>
+          </div>
+        </div>
+
+        <div class="github__years animate-in" id="github-years" role="tablist" aria-label="Contributions by year">
+          <div class="github__years-loading">Loading yearly totals…</div>
+        </div>
+
         <div class="github__calendar card animate-in">
           <div class="calendar">Loading contribution data...</div>
         </div>
+
       </div>
     </section>
 
