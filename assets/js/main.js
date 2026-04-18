@@ -104,15 +104,6 @@ themeBtn.addEventListener('click', () => {
   localStorage.setItem('theme', next);
 });
 
-/*==================== PROJECT ACCORDION ====================*/
-document.querySelectorAll('.work__card').forEach(card => {
-  card.addEventListener('click', (e) => {
-    if (e.target.closest('a')) return;
-    const isExpanded = card.classList.contains('work__card--expanded');
-    document.querySelectorAll('.work__card--expanded').forEach(c => c.classList.remove('work__card--expanded'));
-    if (!isExpanded) card.classList.add('work__card--expanded');
-  });
-});
 
 /*==================== CONTACT FORM (MAILTO) ====================*/
 const contactForm = document.getElementById('contact-form');
@@ -194,49 +185,6 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       });
     });
 
-    // AI stat count-up
-    document.querySelectorAll('.ai__stat-number[data-count]').forEach(el => {
-      const target = parseInt(el.dataset.count);
-      gsap.to(el, {
-        textContent: target,
-        duration: 1.5,
-        ease: 'power2.out',
-        snap: { textContent: 1 },
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 85%',
-          once: true
-        },
-        onUpdate: function() {
-          el.textContent = Math.round(parseFloat(el.textContent));
-        }
-      });
-    });
-
-    // Terminal typing effect
-    const terminalBody = document.getElementById('terminal-body');
-    if (terminalBody) {
-      const lines = terminalBody.querySelectorAll('.terminal__line');
-      lines.forEach(line => {
-        line.style.opacity = '0';
-      });
-
-      ScrollTrigger.create({
-        trigger: terminalBody,
-        start: 'top 80%',
-        once: true,
-        onEnter: () => {
-          lines.forEach((line, i) => {
-            gsap.to(line, {
-              opacity: 1,
-              duration: 0.3,
-              delay: i * 0.25
-            });
-          });
-        }
-      });
-    }
-
     // Tech stack: mouse parallax
     const stackItems = document.querySelectorAll('.stack__item');
     if (stackItems.length > 0) {
@@ -277,13 +225,5 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     document.querySelectorAll('[data-count]').forEach(el => {
       el.textContent = el.dataset.count;
     });
-
-    // Show terminal lines
-    const terminalBody = document.getElementById('terminal-body');
-    if (terminalBody) {
-      terminalBody.querySelectorAll('.terminal__line').forEach(line => {
-        line.style.opacity = '1';
-      });
-    }
   }
 }

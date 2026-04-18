@@ -1,41 +1,67 @@
 # Rajneesh Sharma — Portfolio
 
-> Senior Full Stack Developer & AI Developer based in India. Available for freelance projects.
+> Senior Full Stack & AI Developer. I build production software with AI-native workflows. Open to full-time and contract roles.
 
 ## About
 
-Rajneesh Sharma (also known as Rajneesh Kumar Sharma) is a Senior Full Stack JavaScript Developer with 8+ years of experience. Based in North India, he builds high-performance web applications and AI-integrated solutions for clients worldwide.
+Rajneesh Sharma (also known as Rajneesh Kumar Sharma, Rajneesh K Sharma) is a Senior Full Stack JavaScript Developer with 8+ years of experience. Based in North India, he ships high-performance web applications and AI-integrated systems using AI-native delivery workflows. Currently open to full-time, contract, and freelance engagements — remote-first.
+
+Tagline: "Turning complex problems into elegant solutions."
+
+## Value Proposition
+
+Rajneesh ships features 3× faster than traditional workflows by pairing deep engineering craft with AI-native development. A typical auth-system ships in ~3 days (4 steps) instead of ~2 weeks (11 steps), with zero pre-PR bugs.
 
 ## Core Skills
 
-- Full Stack Development: React, Next.js, Node.js, TypeScript, Express
-- AI Development: RAG systems, AI automation, MCP workflows, Claude Code
-- Cloud & DevOps: AWS, Docker, CI/CD
-- Databases: MongoDB, PostgreSQL, Redis
-- Architecture: Microservices, REST APIs, GraphQL, real-time systems
+- Full Stack Development: React, Next.js, Node.js, TypeScript, Express, Angular
+- AI Development: RAG systems, AI automation, MCP workflows, Claude Code, AI-augmented delivery
+- AI-Native Workflows: TDD loops, automated security audits, AI-assisted planning and code review
+- Cloud & DevOps: AWS (Lambda, EC2, DynamoDB, API Gateway, S3, Cognito, Secret Manager), Docker, CI/CD
+- Databases: MongoDB, PostgreSQL, DynamoDB, Redis
+- Real-Time & Streaming: Kafka, WebRTC, Socket.io, event-driven systems
+- Voice AI: Deepgram, Pipecat, Amazon Lex V2, Amazon Polly
+- Architecture: Microservices, REST APIs, GraphQL, serverless, multi-tenant SaaS
 
 ## What He Builds
 
 - Full-stack web applications (React + Node.js)
-- AI-integrated solutions (RAG chatbots, intelligent automation)
+- AI-integrated solutions (RAG chatbots, voice agents, intelligent automation)
 - API and backend systems (scalable, production-grade)
+- MCP servers and custom AI workflows
 - Performance-optimized architecture
 
 ## Notable Projects
 
-- MyWorth.ai — AI-powered FinTech SaaS for asset management
-- AI Voice Agent Platform — Real-time multilingual voice AI with Pipecat + Deepgram
-- Fluxiontek RAG Chatbot — Enterprise knowledge base with Chainlit + LangChain
-- Kangaroo Propane — Full-stack propane delivery platform
-- Wave Marine — Marine equipment marketplace
+- **MyWorth.ai** — AI-powered FinTech SaaS for wealth management and asset tracking (LIVE)
+- **AI Voice Agent Platform** — White-label outbound AI calling for Indian SMBs, Hindi+English, Pipecat + Deepgram + Amazon Lex V2 (IN DEVELOPMENT)
+- **Fluxiontek RAG Chatbot** — Enterprise RAG over 10K+ internal docs with Chainlit + LangChain (LIVE)
+- **Kangaroo Propane** — Real-time propane delivery e-commerce with live GPS tracking, iOS + Android (LIVE)
+- **Wave Marine** — Multi-vendor marine services marketplace, Kafka-powered real-time updates (LIVE)
+- **United Transportation** — Unified logistics TMS with HubSpot + QuickBooks integration (IN DEVELOPMENT)
+- **The Canadian Load Board** — B2B logistics platform for Canadian brokers and carriers (DELIVERED)
 
-## AI Expertise
+## AI-Native Delivery
 
-Rajneesh builds WITH AI, not just about AI. He uses Claude Code, RAG pipelines, MCP server integrations, and AI-augmented development workflows to ship faster and deliver more.
+Rajneesh builds WITH AI, not just about AI. His workflow compresses the typical 11-step feature lifecycle (research → PRD → design → scaffold → implement → unit tests → integration tests → manual QA → code review → docs rewrite) into 4 AI-augmented steps:
+
+1. Describe intent to Claude
+2. Review + refine plan
+3. Implement with TDD loop
+4. Security + review audit
+
+Toolbelt: Claude Code, MCP Servers, RAG pipelines, TDD Automation, Security Review, Architecture planning.
+
+## Availability
+
+Open to new opportunities:
+- Full-time senior/staff roles (remote-first)
+- Long-term and short-term contracts
+- Freelance engagements
 
 ## Contact
 
 - Website: https://rajneeshksharma.github.io/
 - GitHub: https://github.com/rajneeshksharma
 - Email: k.rajneesh.sharma@gmail.com
-- Location: North India
+- Location: North India (remote worldwide)

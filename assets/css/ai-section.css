@@ -1,0 +1,356 @@
+/* ==================== AI SECTION REWORK ==================== */
+/* Scoped under .ai — cannot affect other sections. */
+
+.ai {
+  /* marker: ai-section.css loaded */
+  --ai-panel-bg: rgba(17, 24, 39, 0.55);
+  --ai-panel-border: rgba(30, 41, 59, 0.9);
+  --ai-terminal-bg: #0a0e14;
+  --ai-terminal-border: rgba(16, 185, 129, 0.18);
+  --ai-before-color: #94a3b8;
+  --ai-with-color: #10b981;
+  --ai-bug-color: #ef4444;
+}
+
+/* ---------- Productivity block ---------- */
+.ai__productivity {
+  margin-top: 2.5rem;
+}
+
+.ai__productivity-headline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.ai__productivity-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.15fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* ---------- Panel cards ---------- */
+.ai-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 1px solid var(--ai-panel-border);
+  border-radius: 14px;
+  background: var(--ai-panel-bg);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  min-height: 440px;
+}
+
+.ai-panel--with {
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.08) inset,
+              0 12px 30px -12px rgba(16, 185, 129, 0.2);
+}
+
+.ai-panel__header {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed var(--surface-2);
+}
+
+.ai-panel--with .ai-panel__header {
+  color: var(--ai-with-color);
+  border-bottom-color: rgba(16, 185, 129, 0.3);
+}
+
+/* ---------- Step list ---------- */
+.ai-panel__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.ai-panel__step {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  padding-left: 1.2rem;
+  position: relative;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.ai-panel__step::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ai-before-color);
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.ai-panel--with .ai-panel__step::before {
+  background: var(--ai-with-color);
+}
+
+.ai-panel__step.is-active {
+  color: var(--text-primary);
+  transform: translateX(2px);
+}
+
+.ai-panel__step.is-active::before {
+  background: #34d399;
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.25);
+  transform: scale(1.15);
+}
+
+/* ---------- Metric row at bottom of each panel ---------- */
+.ai-panel__metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--surface-2);
+}
+
+.ai-panel--with .ai-panel__metrics {
+  border-top-color: rgba(16, 185, 129, 0.3);
+}
+
+.ai-panel__metric {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.ai-panel__metric-icon {
+  font-size: 1rem;
+  opacity: 0.75;
+}
+
+.ai-panel__metric-value {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.ai-panel__metric--bugs .ai-panel__metric-value {
+  color: var(--ai-bug-color);
+}
+
+.ai-panel__metric--clean .ai-panel__metric-value {
+  color: var(--ai-with-color);
+}
+
+.ai-panel--before .ai-panel__metric:first-child .ai-panel__metric-value {
+  color: #f59e0b;
+}
+
+.ai-panel--with .ai-panel__metric:first-child .ai-panel__metric-value {
+  color: var(--ai-with-color);
+}
+
+/* ---------- AI terminal ---------- */
+.ai-terminal {
+  background: var(--ai-terminal-bg);
+  border: 1px solid var(--ai-terminal-border);
+  border-radius: 14px;
+  box-shadow:
+    0 24px 60px -20px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(16, 185, 129, 0.06) inset,
+    0 0 40px -10px rgba(16, 185, 129, 0.25);
+  overflow: hidden;
+  font-family: var(--font-mono);
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-terminal__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 0.9rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.ai-terminal__dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.ai-terminal__dot--red    { background: #ff5f56; }
+.ai-terminal__dot--yellow { background: #ffbd2e; }
+.ai-terminal__dot--green  { background: #27c93f; }
+
+.ai-terminal__title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.ai-terminal__body {
+  padding: 1rem 1.1rem 1.25rem;
+  font-size: 0.78rem;
+  line-height: 1.65;
+  color: #d1d5db;
+  flex: 1;
+  overflow: hidden;
+}
+
+.ai-terminal__code {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+.ai-terminal__code .prompt { color: var(--primary); font-weight: 600; }
+.ai-terminal__code .arrow  { color: var(--secondary); }
+.ai-terminal__code .ok     { color: #22c55e; font-weight: 600; }
+.ai-terminal__code .check  { color: #22c55e; font-weight: 700; }
+.ai-terminal__code .dim    { color: #64748b; }
+
+.ai-terminal__cursor {
+  display: inline-block;
+  color: var(--primary);
+  animation: aiCaretBlink 1s steps(2, start) infinite;
+}
+
+@keyframes aiCaretBlink {
+  0%, 50%        { opacity: 1; }
+  50.01%, 100%   { opacity: 0; }
+}
+
+/* ---------- Capability card hover polish ---------- */
+.ai__cap-card {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ai__cap-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: 0 14px 36px -10px rgba(16, 185, 129, 0.22);
+}
+
+.ai__capabilities {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(30, 41, 59, 0.4);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1023px) {
+  .ai__productivity-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .ai-terminal {
+    grid-column: span 2;
+    min-height: 320px;
+  }
+  .ai-panel { min-height: 380px; }
+}
+
+@media (max-width: 767px) {
+  .ai__productivity-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .ai-terminal { grid-column: span 1; min-height: 280px; }
+  .ai-panel { min-height: auto; }
+  .ai-terminal__body { font-size: 0.7rem; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ai-panel__step,
+  .ai-panel__step::before,
+  .ai-terminal__cursor,
+  .ai__cap-card {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- Light theme ---------- */
+body.light-theme .ai {
+  --ai-panel-bg: rgba(255, 255, 255, 0.75);
+  --ai-panel-border: #e2e8f0;
+  --ai-before-color: #94a3b8;
+  --ai-with-color: #059669;
+  --ai-bug-color: #b91c1c;
+}
+
+body.light-theme .ai-panel {
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+body.light-theme .ai-panel--with {
+  box-shadow: 0 0 0 1px rgba(5, 150, 105, 0.1) inset,
+              0 12px 30px -12px rgba(5, 150, 105, 0.22);
+}
+
+body.light-theme .ai-panel__step {
+  color: #334155;
+}
+
+body.light-theme .ai-panel__step.is-active {
+  color: #0f172a;
+}
+
+body.light-theme .ai-panel__metric {
+  color: #475569;
+}
+
+body.light-theme .ai-panel__metric-value {
+  color: #0f172a;
+}
+
+body.light-theme .ai-panel--with .ai-panel__metric:first-child .ai-panel__metric-value,
+body.light-theme .ai-panel__metric--clean .ai-panel__metric-value {
+  color: #047857;
+}
+
+body.light-theme .ai-panel--before .ai-panel__metric:first-child .ai-panel__metric-value {
+  color: #b45309;
+}
+
+body.light-theme .ai-panel__metric--bugs .ai-panel__metric-value {
+  color: #b91c1c;
+}
+
+body.light-theme .ai__capabilities {
+  border-top-color: #e2e8f0;
+}
+
+body.light-theme .ai-terminal {
+  box-shadow: 0 24px 60px -20px rgba(15, 23, 42, 0.35),
+              0 0 0 1px rgba(15, 23, 42, 0.06) inset;
+}
