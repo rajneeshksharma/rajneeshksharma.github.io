@@ -1192,6 +1192,140 @@ img {
   }
 }
 
+/*==================== CERTIFICATIONS ====================*/
+.certs__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+  margin-top: 3rem;
+}
+
+.certs__card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.certs__card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(249, 115, 22, 0.45);
+  box-shadow: 0 12px 32px -16px rgba(249, 115, 22, 0.35);
+}
+
+.certs__header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.certs__badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  padding: 6px;
+}
+
+.certs__badge--wide {
+  width: 72px;
+}
+
+.certs__badge img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.certs__meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
+}
+
+.certs__issuer {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.certs__date {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.certs__title {
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 0;
+  color: var(--text);
+}
+
+.certs__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.certs__link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-warm);
+  text-decoration: none;
+  padding-top: 0.4rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+  transition: color .2s ease, gap .2s ease;
+}
+
+.certs__link:hover {
+  color: var(--accent);
+  gap: 0.55rem;
+}
+
+.certs__link--muted {
+  color: var(--text-muted);
+  cursor: default;
+}
+
+.certs__link--muted:hover {
+  color: var(--text-muted);
+  gap: 0.35rem;
+}
+
+body.light-theme .certs__link {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+@media screen and (max-width: 1024px) {
+  .certs__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .certs__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /*==================== ABOUT ====================*/
 .about__grid {
   display: grid;

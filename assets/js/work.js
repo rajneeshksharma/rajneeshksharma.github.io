@@ -19,7 +19,7 @@ const PROJECTS = [
     problem: 'Individuals and families lacked a secure, centralized platform to track, manage, and share their complete financial asset portfolio.',
     solution: 'Built a full-stack fintech SaaS with AI-powered document extraction, drag-and-drop upload, asset distribution analytics, collaborator sharing, and premium subscription billing.',
     impact: 'Users can upload any asset document and have it auto-parsed by AI, view portfolio distribution charts, and securely share access with family or advisors.',
-    image: null
+    image: { svg: 'assets/img/myworth.svg', alt: 'MyWorth.ai — AI-powered wealth management dashboard with asset allocation and growth chart' }
   },
   {
     number: '02',
@@ -39,10 +39,52 @@ const PROJECTS = [
     problem: 'Indian enterprises lacked an affordable, multilingual AI calling solution for lead qualification, appointment booking, and follow-ups.',
     solution: 'Building a white-label outbound AI calling platform using self-hosted Asterisk + Pipecat + Deepgram STT + Amazon Lex V2 + Polly TTS, with a serverless AWS pipeline for campaign management.',
     impact: 'Enables enterprises to deploy AI voice agents at sub-₹10K/month, handling 150–200 calls/day with natural Hindi + English conversations and automated CRM updates.',
-    image: null
+    image: { svg: 'assets/img/voice-agent.svg', alt: 'AI Voice Agent Platform — Hindi + English outbound calling with Asterisk, Deepgram, Lex, and Polly pipeline' }
   },
   {
     number: '03',
+    title: 'Date.Com',
+    tagline: 'Real-time dating platform — Node.js + AWS backend powering matching, chat webhooks & deep-link attribution',
+    status: 'LIVE',
+    flagship: true,
+    accent: 'secondary',
+    tags: ['Full-Stack', 'Node.js', 'AWS', 'Real-Time'],
+    metrics: [
+      { value: 'Real-time', label: 'Sendbird + webhooks',    verify: false },
+      { value: 'Node.js',   label: 'REST + WS APIs',         verify: false },
+      { value: 'MongoDB',   label: 'profiles & matches',     verify: false },
+      { value: 'AWS',       label: 'auto-scaled infra',      verify: false }
+    ],
+    tech: ['Node.js', 'Express', 'AWS', 'MongoDB', 'Sendbird', 'Branch.io', 'Firebase', 'Kotlin', 'Jetpack Compose'],
+    links: { live: 'https://date.com/', github: null },
+    problem: 'A consumer-scale dating product needed a backend that could serve real-time matching, moderate chat, dedupe abuse, and preserve referral attribution from ad-click through install to first message — all while a Jetpack Compose Android client stayed buttery-smooth.',
+    solution: 'Built Node.js services on AWS (API Gateway + Lambda + EC2 workers) with MongoDB for profiles, matches and messaging metadata; integrated Sendbird server-side via webhooks for chat moderation, presence, and FCM push fan-out; implemented Branch.io server-side deferred deep-link attribution; Firebase Auth + Cloud Messaging on the edge; CloudWatch + structured logging for ops.',
+    impact: 'Backend handles real-time matchmaking, chat webhooks, and push at scale — the Compose Android client is one of three clients the same APIs power, and referral context is preserved end-to-end from install to first message.',
+    image: { svg: 'assets/img/date-com.svg', alt: 'Date.Com — Node.js + AWS + MongoDB backend powering a Jetpack Compose Android dating app with Sendbird chat and Branch.io deep linking' }
+  },
+  {
+    number: '04',
+    title: 'Go Hotel Life',
+    tagline: 'Hospitality backend — Node.js on AWS orchestrating BLE key provisioning, mobile check-in, F&B orders & real-time POS folio sync',
+    status: 'LIVE',
+    flagship: false,
+    accent: 'accent-warm',
+    tags: ['Full-Stack', 'Node.js', 'AWS', 'Hospitality'],
+    metrics: [
+      { value: 'Multi-property', label: 'tenant-aware APIs',  verify: false },
+      { value: 'Node.js',        label: 'BLE + POS orchestration', verify: false },
+      { value: 'Real-time',      label: 'folio sync via webhooks', verify: false },
+      { value: 'MongoDB',        label: 'guest + stay records',    verify: false }
+    ],
+    tech: ['Node.js', 'Express', 'AWS Lambda', 'API Gateway', 'MongoDB', 'SQS', 'Java', 'Android SDK', 'BLE', 'POS SDK'],
+    links: { live: 'https://www.gohotellife.com/', github: null },
+    problem: 'Hotels needed a unified backend that could orchestrate BLE key provisioning, mobile check-in/out, in-app F&B ordering, and POS charge posting — all tenant-aware across multiple properties, with charges rolling up to a single guest folio in real time.',
+    solution: 'Designed Node.js microservices on AWS (API Gateway + Lambda + SQS for async POS events) with MongoDB for guests, stays, and folios; built BLE key-provisioning APIs that issue time-boxed encrypted tokens to the Android app; integrated the property POS SDK via webhooks so F&B and incidentals post directly to the active folio; JWT auth with property-scoped claims; CloudWatch dashboards for ops.',
+    impact: 'Guests skip the front desk, unlock rooms from their phone, order room service in-app, and every charge — BLE, F&B, POS — flows through the Node.js folio service into a single checkout. The Android app is one client on a backend that is ready for web and iOS too.',
+    image: { svg: 'assets/img/go-hotel-life.svg', alt: 'Go Hotel Life — Node.js on AWS orchestrating BLE key provisioning, mobile check-in, F&B ordering, and real-time POS folio sync with a Java Android client' }
+  },
+  {
+    number: '05',
     title: 'Fluxiontek RAG Chatbot',
     tagline: 'Enterprise RAG chatbot over 10K+ internal docs',
     status: 'LIVE',
@@ -58,10 +100,10 @@ const PROJECTS = [
     problem: 'Enterprise teams needed an AI assistant that could answer questions from thousands of internal documents with accurate citations.',
     solution: 'Built a RAG pipeline with chunked document ingestion, hybrid search (dense + keyword), and a Chainlit chat UI with citation links back to source documents.',
     impact: 'Employees get answers in seconds across 10K+ documents, with citation-backed responses that teams can trust for decision-making.',
-    image: null
+    image: { svg: 'assets/img/fluxiontek-rag.svg', alt: 'Fluxiontek RAG Chatbot — enterprise document retrieval with cited answers and sub-400ms responses' }
   },
   {
-    number: '04',
+    number: '06',
     title: 'Kangaroo Propane',
     tagline: 'Real-time propane delivery e-commerce with live tracking',
     status: 'LIVE',
@@ -80,7 +122,7 @@ const PROJECTS = [
     image: { webp: 'assets/img/portfolio1.webp', jpg: 'assets/img/portfolio1.jpg', alt: 'Kangaroo Propane — Full stack propane delivery web application' }
   },
   {
-    number: '05',
+    number: '07',
     title: 'Wave Marine',
     tagline: 'Multi-vendor marine services marketplace',
     status: 'LIVE',
@@ -99,7 +141,7 @@ const PROJECTS = [
     image: { webp: 'assets/img/wave.webp', jpg: 'assets/img/wave.png', alt: 'Wave Marine — Marine equipment marketplace' }
   },
   {
-    number: '06',
+    number: '08',
     title: 'United Transportation',
     tagline: 'Unified logistics TMS — order → dispatch → billing',
     status: 'IN_DEV',
@@ -115,10 +157,10 @@ const PROJECTS = [
     problem: 'Client\'s logistics operations were fragmented across Notion, Ascend TMS, and manual processes — causing double data entry, 4+ months billing backlog, and revenue leakage.',
     solution: 'Designed a unified transport management system with order-to-billing workflow, HubSpot rate card integration, QuickBooks sync, and a mobile-friendly dispatch dashboard.',
     impact: 'Eliminated double data entry, automated billing workflows, and provided real-time visibility from order intake through invoicing.',
-    image: null
+    image: { svg: 'assets/img/united-transportation.svg', alt: 'United Transportation — unified TMS dashboard with order-to-billing pipeline and HubSpot + QuickBooks integrations' }
   },
   {
-    number: '07',
+    number: '09',
     title: 'The Canadian Load Board',
     tagline: 'B2B logistics platform for Canadian brokers & carriers',
     status: 'DELIVERED',
@@ -134,7 +176,7 @@ const PROJECTS = [
     problem: 'Canadian logistics brokers and carriers lacked a centralized platform for lead generation, load posting, and streamlined RFQ management.',
     solution: 'Built a cloud-based logistics platform with real-time lead generation, inventory management, Stripe-powered payments, and an automated RFQ workflow for brokers and carriers.',
     impact: 'Streamlined the entire broker-carrier relationship — from load discovery through payment — reducing manual coordination and accelerating deal cycles.',
-    image: null
+    image: { svg: 'assets/img/canadian-load-board.svg', alt: 'The Canadian Load Board — B2B logistics platform with Canada-wide lane map, load cards, and Stripe-ready RFQ' }
   }
 ];
 
@@ -191,6 +233,13 @@ function renderStatusChip(status) {
 }
 
 function renderVisual(project) {
+  if (project.image && project.image.svg) {
+    return `
+      <div class="work__visual">
+        <img src="${escapeHTML(project.image.svg)}" alt="${escapeHTML(project.image.alt)}" class="work__visual-img" loading="lazy" />
+      </div>
+    `;
+  }
   if (project.image) {
     return `
       <div class="work__visual">
@@ -375,7 +424,11 @@ const WorkModal = (function () {
       if (p.links && p.links.github) links.push(`<a href="${escapeHTML(p.links.github)}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>`);
       metaEl.innerHTML = statusChip + links.join('');
 
-      if (p.image) {
+      if (p.image && p.image.svg) {
+        visualEl.innerHTML = `
+          <img src="${escapeHTML(p.image.svg)}" alt="${escapeHTML(p.image.alt)}" loading="lazy" />
+        `;
+      } else if (p.image) {
         visualEl.innerHTML = `
           <picture>
             <source type="image/webp" srcset="${escapeHTML(p.image.webp)}" />
